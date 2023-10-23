@@ -1,0 +1,56 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  username     String    @unique @db.VarChar(50)
+  email        String    @unique @db.VarChar(50)
+  password     String    @db.VarChar(50)
+  role         String    @db.VarChar(20)
+  createdAt    DateTime  @default(now()) @map(name: "createdAt")
+  file         File[]
+  subscription Subscription?
+  referrals    Referral[] @relation("ReferralToUser")
+  referredBy   Referral[] @relation("ReferralByUser")
+}
+
+model File {
+  id         Int       @default(autoincrement())
+  fileName   String    @db.VarChar(100)
+  fileType   String    @db.VarChar(20)
+  filePath   String    @db.VarChar(200)
+  createdAt  DateTime  @default(now()) @map(name: "createdAt")
+  userId     Int       @unique
+  user       User      @relation(fields: [userId], references: [id])
+}
+
+model Subscription {
+  id         Int       @default(autoincrement())
+  startDate  DateTime  @default(now()) @map(name: "startDate")
+  endDate    DateTime  @map(name: "endDate")
+  price      Decimal   @db.Money
+  userId     Int       @unique
+  user       User      @relation(fields: [userId], references: [id])
+}
+
+model Referral {
+  id         Int       @default(autoincrement())
+  discount   Decimal   @db.Money
+  createdAt  DateTime  @default(now()) @map(name: "createdAt")
+
+  referrerId Int
+  referredId Int
+  referrer   User      @relation("ReferralToUser", fields: [referrerId], references: [id])
+  referred   User      @relation("ReferralByUser", fields: [referredId], references: [id])
+
+  @@id([referrerId, referredId])
+}
