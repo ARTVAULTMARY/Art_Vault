@@ -17,6 +17,7 @@ model User {
   password     String    @db.VarChar(50)
   role         String    @db.VarChar(20)
   createdAt    DateTime  @default(now()) @map(name: "createdAt")
+  activation   Boolean   @default(false)
   file         File[]
   subscription Subscription?
   referrals    Referral[] @relation("ReferralToUser")
@@ -29,6 +30,7 @@ model File {
   fileType   String    @db.VarChar(20)
   filePath   String    @db.VarChar(200)
   createdAt  DateTime  @default(now()) @map(name: "createdAt")
+  keywords   String[]
   userId     Int       @unique
   user       User      @relation(fields: [userId], references: [id])
 }
