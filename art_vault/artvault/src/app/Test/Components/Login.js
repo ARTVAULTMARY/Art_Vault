@@ -5,6 +5,16 @@ import { useRouter } from "next/navigation";
 
 export default function Login () {
     const router = useRouter();
+    
+    const handleLogin = (e) => {
+        e.preventDefault();
+        //Todo Dispatch action for login
+    };
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        //Todo Dispatch action for logout
+    };
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -20,9 +30,9 @@ export default function Login () {
                         <TextField.Input size="3" placeholder="Username" />
                         <TextField.Input size="3" placeholder="Password" />
                         <div className="flex flex-row justify-between">
-                            <Button className="mt-5 hover:cursor-pointer">Login</Button>
+                            <Button onClick={handleLogin} className="mt-5 hover:cursor-pointer">Login</Button>
                             <Button onClick={handleClick} className="mt-5 hover:cursor-pointer">About</Button>                 
-                            <Button className="mt-5 hover:cursor-pointer">Logout</Button>
+                            <Button onClick={handleLogout} className="mt-5 hover:cursor-pointer">Logout</Button>
                         </div>
                     </div>
                 </Card>
