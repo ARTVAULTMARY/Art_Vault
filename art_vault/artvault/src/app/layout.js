@@ -1,5 +1,3 @@
-import { Theme } from '@radix-ui/themes'
-import '@radix-ui/themes/styles.css';
 import './globals.css'
 
 export const metadata = {
@@ -10,10 +8,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="dark">
-        <Theme accentColor="red" grayColor="slate" radius="small">
+      <body>
           <main>{children}</main>
-        </Theme>
       </body> 
     </html>
   );
