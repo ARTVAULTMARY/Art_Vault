@@ -54,8 +54,10 @@ export default function Login () {
         </form>
         {!isRevealed ? 
           <div className="flex flex-column justify-center w-full mt-4">
-            <div className="flex flex-row">
-              <h1>User Data:</h1>
+            <div className="flex flex-col my-5">
+              <h1 className="text-black">User Information:</h1>
+              <p className="text-black">Email: {user?.email}</p>
+              <p className="text-black">Password: {user?.password}</p>
             </div> 
           </div> : null
         }
