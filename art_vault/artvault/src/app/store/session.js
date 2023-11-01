@@ -96,3 +96,20 @@ export const logout = () => async (dispatch) => {
     dispatch(removeUser());
   };
 };
+
+
+export const authenticate = () => async (dispatch) => {
+  const response = await fetch('', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    const data = await response.json();
+    if (data.errors) {
+      return;
+    }
+  
+    dispatch(setUser(data));
+  }
+}

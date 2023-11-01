@@ -1,35 +1,23 @@
-import { configureStore } from "redux";
-import { createWrapper } from "next-redux-wrapper";
+import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { createWrapper } from "next-redux-wrapper";
 import rootReducer from "./reducers";
 
+// initial states here
 const initalState = {};
 
-export const store = configureStore(
-    rootReducer,
-    initalState,
+// middleware
+const middleware = [thunk];
+
+// creating store
+export const store = createStore(
+  rootReducer,
+  initalState,
+  composeWithDevTools(applyMiddleware(...middleware))
 );
-import rootReducer from './reducer/index';
-import thunk from 'redux-thunk';
-import { createStore, applyMiddleware, compose } from 'redux';
 
-const initStore = (initialState, options) => {
-    let composeEnhancers = compose;
+// assigning store to next wrapper
+const makeStore = () => store;
 
-    //Check if function running on the sever or client
-    if (!options.isServer) {
-        //Setup Redux Debuger
-        composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-    }
-
-
-
-    const store = createStore(rootReducer, initialState, composeEnhancers(
-        applyMiddleware(thunk) //Applying redux-thunk middleware
-    ));
-
-    return store;
-};
-
-
-export default initStore;
+export const wrapper = createWrapper(makeStore);
