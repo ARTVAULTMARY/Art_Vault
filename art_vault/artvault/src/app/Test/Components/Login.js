@@ -27,13 +27,13 @@ export default function Login () {
           <form className="flex flex-col items-center m-8">
               <LoginInputs />
               <div className="flex flex-row justify-between w-11/12 mt-3">
-                <button onClick={handleLogin} className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                <button onClick={handleLogin} className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 border border-red-500 hover:border-transparent rounded">
                   Login
                 </button>
-                <button onClick={handleClick} className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                <button onClick={handleClick} className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 border border-red-500 hover:border-transparent rounded">
                   User Info
                 </button>                 
-                <button onClick={handleLogout} className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                <button onClick={handleLogout} className="bg-red-400 hover:bg-red-500 text-white font-semibold py-2 px-4 border border-red-500 hover:border-transparent rounded">
                   Logout
                 </button>
               </div>
