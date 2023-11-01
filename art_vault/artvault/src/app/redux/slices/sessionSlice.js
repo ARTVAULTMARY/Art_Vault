@@ -1,31 +1,18 @@
-//-----Constants-----//
-const SET_USER = 'session/SET_USER';
-const REMOVE_USER = 'session/REMOVE_USER';
+import { createSlice } from "@reduxjs/toolkit";
 
-
-//-----Reducer-----//
 const initialState = { user: null };
-export default function reducer(state = initialState, action) {
-  switch (action.type) {
-    case SET_USER:
-      return { user: action.payload };
 
-    case REMOVE_USER:
-      return { user: null };
-
-    default: return state;
-  };
-};
-
-
-//-----Actions-----//
-const setUser = (user) => ({
-  type: SET_USER,
-  payload: user
-});
-
-const removeUser = () => ({
-  type: REMOVE_USER,
+const sessionSlice = createSlice({
+  name: "session",
+  initialState,
+  reducers: {
+    setUser(state, action) {
+      return { user: action.payload};
+    },
+    removeUser() {
+      return initialState;
+    }
+  }
 });
 
 
@@ -58,7 +45,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
 };
 
 
-export const login = (email, password) => async (dispatch) => {
+export const logIn = (email, password) => async (dispatch) => {
   const response = await fetch('', {
     method: 'POST',
     headers: {
@@ -85,7 +72,7 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 
-export const logout = () => async (dispatch) => {
+export const logOut = () => async (dispatch) => {
   const response = await fetch('', {
     headers: {
       'Content-Type': 'application/json',
@@ -113,3 +100,7 @@ export const authenticate = () => async (dispatch) => {
     dispatch(setUser(data));
   }
 }
+
+
+export const { setUser, removeUser } = sessionSlice.actions;
+export default sessionSlice.reducer;
