@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser, removeUser } from "@/app/redux/slices/sessionSlice";
 import LoginInputs from "./LoginInputs";
 
+//TODO create error handling for input fields
 export default function Login () {
   const [isRevealed, setIsRevealed] = useState("false")
   const [email, setEmail] = useState("");
@@ -21,7 +22,6 @@ export default function Login () {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("dispatching")
     dispatch(setUser(userData))
   };
 
@@ -53,9 +53,9 @@ export default function Login () {
             </div>
         </form>
         {!isRevealed ? 
-          <div className="flex flex-column justify-center w-full mt-4">
-            <div className="flex flex-col my-5">
-              <h1 className="text-black">User Information:</h1>
+          <div className="flex flex-column justify-center w-full">
+            <div className="flex flex-col mb-8">
+              <h1 className="text-black mb-2 font-bold">User Information:</h1>
               <p className="text-black">Email: {user?.email}</p>
               <p className="text-black">Password: {user?.password}</p>
             </div> 
