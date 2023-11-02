@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser, removeUser } from "@/app/redux/slices/sessionSlice";
+import { setUser, removeUser } from "@/app/redux/slices/sessionSlice"; //Reducer actions
 import LoginInputs from "./LoginInputs";
 
-//TODO create error handling for input fields
+//TODO create error handling functions for input fields
 export default function Login () {
   const [isRevealed, setIsRevealed] = useState("false")
   const [email, setEmail] = useState("");
@@ -22,7 +22,8 @@ export default function Login () {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(setUser(userData))
+    //TODO dispatch thunk for endpoint testing instead of this action: 
+    dispatch(setUser(userData)) 
   };
 
   const handleLogout = (e) => {
@@ -54,7 +55,7 @@ export default function Login () {
         </form>
         {!isRevealed ? 
           <div className="flex flex-column justify-center w-full">
-            <div className="flex flex-col mb-8">
+            <div className="flex flex-col mb-8 items-center">
               <h1 className="text-black mb-2 font-bold">User Information:</h1>
               <p className="text-black">Email: {user?.email}</p>
               <p className="text-black">Password: {user?.password}</p>
