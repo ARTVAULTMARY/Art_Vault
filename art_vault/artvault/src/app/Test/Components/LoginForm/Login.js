@@ -22,7 +22,7 @@ export default function Login () {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    //TODO dispatch thunk for endpoint testing instead of this action: 
+    //TODO dispatch thunk for endpoint testing instead of reducer actions: 
     dispatch(setUser(userData)) 
   };
 
