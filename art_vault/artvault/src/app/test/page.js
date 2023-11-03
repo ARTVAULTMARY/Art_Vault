@@ -1,4 +1,4 @@
-import Login from "./Components/LoginForm/Login";
+import Login from "./components/LoginForm/Login";
 
 export default function Test() {
 
