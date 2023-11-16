@@ -43,7 +43,7 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 ## Redux Store
 Documentation for Redux-Toolkit can be found here: https://redux-toolkit.js.org/
 
-The Redux store is contained within the "redux" folder in the src/app directory, is shipped in a provider which passes the redux store down to the entire application. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice.
+The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice.
 
 ```
 Example Application :
@@ -71,7 +71,7 @@ Example Application :
 
 <!-- TODO Adjust normalization convention and objects when real endpoint data is being received -->
 #### Data Normalization:
-To maintain consistency, data within the store should stay normalized (formatted) within our reducers so that manipulation of data is intuitive and clean. For example: if we have an object or array containing many objects, it might be a goode idea to index each object before adding them to the store, simplifying deletion and editing of data within. When the client makes changes resulting in a delete or edit operation being sent to redux, the specific item being manipulated can be targeted via the index we assigned.
+To maintain consistency, data within the store should stay normalized (formatted) within our reducers, so that manipulation of data is intuitive and clean. For example: if we have an object or array containing many objects, it might be a good idea to index each object before adding them to the store, simplifying the deletion and editing logic within the reducer. When the client makes changes resulting in a delete or edit operation being sent to redux and eventually the database, the specific item being manipulated can be targeted via the assigned index.
 
 ```
 Example of a raw JSON response from a fetch requesting a users artwork:
@@ -123,6 +123,7 @@ can be used to manipulate the data contained within the store.
 
 <br>
 
+<!-- TODO add more on passing props for styling -->
 ## Tailwind
 More information on tailwind className props and more can be found here: https://tailwindcss.com/docs
 
@@ -136,6 +137,8 @@ Styled elements should have their className props listed similarly across the en
 *Tailwind prop priority within each category is not strict, but consistency should be sought within components.*
 
 ### Passing Props for Conditional Styling:
-WIP
+Custom style components can be created and changed conditionally, allowing for better UX solutions to things such as displaying form errors. 
+
+Basic information on creating style objects can be found here: https://tailwindcss.com/docs/reusing-styles#extracting-components-and-partials
 
 <br>
