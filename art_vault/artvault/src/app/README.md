@@ -58,7 +58,7 @@ Components and files containing functions used application-wide should follow th
         )
     }
     ```
--   Helper Functions should be exported as follows:
+-   Helper Functions should be exported with camelCase as follows:
     ```
     export const helperFunc = () => {
         ...
@@ -75,7 +75,7 @@ Documentation for Redux-Toolkit can be found here: https://redux-toolkit.js.org/
 The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state in the "layout.js" file. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice. 
 
 ```
-Example Application :
+Example Application, Store Expanded:
 
 ├── redux
 │   ├── provider.js
@@ -90,12 +90,17 @@ Example Application :
 │   │   ├── LoginForm.js
 │   │   └── LoginInputs.js
 │   └── Signup
-│   │   ├── signupSlice
-│   │   │   ├── thunks.js
-│   │   │   ├── actions.js
-│   │   │   └── reducer.js
-│   │   ├── SignupForm.js
-│   │   └── SignupInputs.js
+│       ├── signupSlice
+│       │   ├── thunks.js
+│       │   ├── actions.js
+│       │   └── reducer.js
+│       ├── SignupForm.js
+│       └── SignupInputs.js
+├── favicon.ico
+├── globals.css
+├── layout.js
+├── page.js
+└── THISREADME.md
 ```
 
 <!-- TODO Adjust normalization convention and objects when real endpoint data is being received -->
