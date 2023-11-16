@@ -45,7 +45,7 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 
 ### Component Structure and File Exports:
 
-Components and files containing functions used application-wide should follow the following.
+Components and files containing functions used application-wide should adhere to the guidelines listed below.
 
 #### Guidelines:
 
