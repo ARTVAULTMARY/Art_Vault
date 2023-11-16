@@ -3,15 +3,11 @@ A Wip set of guidelines for front-end conventions regarding application file str
 
 <br>
 
-## File Structure Reference
+## Basic File Structure Reference
 ```
 Example App:
 
 app
-├── THISREADME.md
-├── favicon.ico
-├── globals.css
-├── layout.js
 ├── redux
 ├── Features
 │    ├── ArtworkDisplay.js
@@ -19,20 +15,25 @@ app
 │    └── Signup
 ├── home
 │    └── page.js
-└── page.js
+├── favicon.ico
+├── globals.css
+├── layout.js
+├── page.js
+└── THISREADME.md
 ```
 
 <br>
 
 ## Next.js
-### Folder Layout and Naming Convention
+### Folder Layout and Naming Convention:
 Next.js uses a routing system based on the folder layout of the application. Documentation can be found here: https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
 <br>*note: page.js is used instead of index.js from Next.js 13*
 
 #### Basic Guidelines:
 - Route folders should always contain a page.js file to satisfy Next.js 13 routing convention.
+- Route folders can be given their own child folder for breaking up page sections when necessary.
 - App Features should be put in the Features folder, named using PascalCase.
-- App Features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
+- App Features should be broken up into multiple components when possible and given their own folder, named         intuitively when doing so.
 - Any files or folders related to redux or the redux store should be camelCased.
 - Use best discretion when naming folders and breaking up features. 
 - Build for scaleability when pheasible.
@@ -119,5 +120,22 @@ EDIT:
 newState.userArtwork[targetId].title = "New Title"
 ``` 
 can be used to manipulate the data contained within the store.
+
+<br>
+
+## Tailwind
+More information on tailwind className props and more can be found here: https://tailwindcss.com/docs
+
+### Tailwind Prop Order Priority:
+Styled elements should have their className props listed similarly across the entire application when possible, where the main order of priority is: 
+
+1. Positional props 
+2. Visual styling
+3. Media queries which follow points 1 and 2
+
+*Tailwind prop priority within each category is not strict, but consistency should be sought within components.*
+
+### Passing Props for Conditional Styling:
+WIP
 
 <br>
