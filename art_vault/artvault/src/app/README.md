@@ -26,14 +26,14 @@ app
 
 <br>
 
-## Next.js
+## React - Next.js
 
-### Folder Layout and Naming Convention:
+### Folder Layout and Naming:
 
 Next.js uses a routing system based on the folder layout of the application. Documentation can be found here: https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
 <br>_note: page.js is used instead of index.js from Next.js 13_
 
-#### Basic Guidelines:
+#### Guidelines:
 
 -   Route folders should always contain a page.js file to satisfy Next.js 13 routing convention.
 -   Route folders can be given their own child folder for breaking up page sections when necessary.
@@ -44,13 +44,35 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 -   Always format with prettier before issuing a PR.
 -   Build for scaleability when pheasible.
 
+### Component and File Exports:
+
+Components and files containing functions used application-wide should follow the following.
+
+#### Guidelines:
+-   Component export names should use PascalCase.
+-   Components should export the main component returning html/jsx as default:
+    ```
+    export default function Component() {
+        return (
+            ...
+        )
+    }
+    ```
+-   Helper Functions should be exported as follows:
+    ```
+    export const helperFunc = () => {
+        ...
+    }
+    ```
+
+
 <br>
 
 ## Redux Store
 
 Documentation for Redux-Toolkit can be found here: https://redux-toolkit.js.org/
 
-The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice.
+The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state in the "layout.js" file. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice. 
 
 ```
 Example Application :
