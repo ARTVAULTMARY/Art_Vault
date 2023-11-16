@@ -74,10 +74,10 @@ Documentation for Redux-Toolkit can be found here: https://redux-toolkit.js.org/
 
 ### Store:
 
-The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state in the "layout.js" file. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice. 
+The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state in the "layout.js" file. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/{FeatureName}/{featureSlice}. 
 
 ```
-Example Application, Store Expanded:
+Example Application - Store Expanded:
 
 ├── redux
 │   ├── provider.js
@@ -195,4 +195,4 @@ Using basic configuration options from: https://prettier.io/docs/en/configuratio
 
 Instructions for setting up prettier in your editor: https://prettier.io/docs/en/install#set-up-your-editor
 
-Install prettier on your IDE and be sure to run before issuing a PR (Shift + Alt + f in VScode).
+Install prettier on your IDE and be sure to run before issuing a PR (VSCode Default: Shift + Alt + f).
