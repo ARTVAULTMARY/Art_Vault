@@ -59,7 +59,7 @@ Components and files containing functions used application-wide should adhere to
         )
     }
     ```
--   Helper Functions should be exported with camelCase as follows:
+-   Helper Functions should be exported and named using camelCase as follows:
     ```
     export const helperFunc = () => {
         ...
