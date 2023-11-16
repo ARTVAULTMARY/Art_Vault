@@ -42,13 +42,14 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 -   Any files or folders related to redux or the redux store should be camelCased.
 -   Use best discretion when naming folders and breaking up features.
 -   Always format with prettier before issuing a PR.
--   Build for scaleability when pheasible.
 
-### Component and File Exports:
+### Component Structure and File Exports:
 
 Components and files containing functions used application-wide should follow the following.
 
 #### Guidelines:
+
+-   Build for scaleability when pheasible.
 -   Component export names should use PascalCase.
 -   Components should export the main component returning html/jsx as default:
     ```
@@ -64,7 +65,6 @@ Components and files containing functions used application-wide should follow th
         ...
     }
     ```
-
 
 <br>
 
@@ -171,13 +171,13 @@ More information on tailwind className props and more can be found here: https:/
 
 ### Tailwind Prop Order Priority:
 
-Styled elements should have their className props listed similarly across the entire application when possible, where the main order of priority is:
+Styled elements should have their className props listed similarly across the entire application when possible, where the main order of priority is made up of the following categories:
 
 1. Positional props
 2. Visual styling
 3. Media queries which follow points 1 and 2
 
-_Tailwind prop priority within each category is not strict, but consistency should be sought within components._
+_Prop order priority within each category is not strict, but consistency should be sought within components._
 
 ### Passing Props for Conditional Styling:
 
