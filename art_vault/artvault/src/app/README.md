@@ -68,9 +68,11 @@ Components and files containing functions used application-wide should adhere to
 
 <br>
 
-## Redux Store
+## Redux 
 
 Documentation for Redux-Toolkit can be found here: https://redux-toolkit.js.org/
+
+### Store:
 
 The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state in the "layout.js" file. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice. 
 
