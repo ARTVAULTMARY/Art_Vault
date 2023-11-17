@@ -11,7 +11,7 @@ Example App:
 
 app
 ├── redux
-├── Features
+├── features
 │    ├── ArtworkDisplay.js
 │    ├── Login
 │    └── Signup
@@ -37,8 +37,8 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 
 -   Route folders should always contain a page.js file to satisfy Next.js 13 routing convention.
 -   Route folders can be given their own child folder for breaking up page sections when necessary.
--   App Features should be put in the Features folder, named using PascalCase.
--   App Features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
+-   App features should be put in the features folder, named using PascalCase.
+-   App features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
 -   Any files or folders related to redux or the redux store should be camelCased.
 -   Use best discretion when naming folders and breaking up features.
 -   Always format with prettier before issuing a PR.
