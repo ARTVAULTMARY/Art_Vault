@@ -31,7 +31,7 @@ app
 ### Folder Layout and Naming:
 
 Next.js uses a routing system based on the folder layout of the application. Documentation can be found here: https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
-<br>_note: page.js is used instead of index.js from Next.js 13_
+<br>_note: page.js is used instead of index.js from Next.js 13 onwards
 
 #### Guidelines:
 
@@ -41,6 +41,7 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 -   App features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
 -   Any files or folders related to redux or the redux store should be camelCased.
 -   Use best discretion when naming folders and breaking up features.
+-   Clean up any console.logs used in testing before pushing production code.
 -   Always format with prettier before issuing a PR.
 
 ### Component Structure and File Exports:
@@ -124,7 +125,8 @@ Example of a raw JSON response from a fetch requesting a users artwork:
         id: 2,
         title: 'Piece of art 2',
         tags: ['one','two','three'],
-    }
+    },
+    ...
 }
 
 ```
@@ -142,7 +144,8 @@ userArtwork: {
         id: 2,
         title: 'Piece of art 2',
         tags: ['one','two','three'],
-    }
+    },
+    ...
 }
 
 ```
@@ -181,11 +184,10 @@ Styled elements should have their className props listed similarly across the en
 
 _Prop order priority within each category is not strict, but consistency should be sought within components._
 
-### Passing Props for Conditional Styling:
+<!-- TODO update with correct information -->
+### Pseudo-Classes for Conditional Styling:
 
-Custom style components can be created and changed conditionally, allowing for better UX solutions to things such as displaying form errors.
-
-Basic information on creating style objects can be found here: https://tailwindcss.com/docs/reusing-styles#extracting-components-and-partials
+Tailwind includes many utility classes that can take care of a lot of the conditional logic required for forms and other components requiring human interaction. A list of pseudo-classes can be found here: https://tailwindcss.com/docs/hover-focus-and-other-states#pseudo-classes
 
 <br>
 
