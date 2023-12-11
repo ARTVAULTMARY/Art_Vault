@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setUser, removeUser } from '@/app/redux/slices/sessionSlice' //Reducer actions
+import { setUser, removeUser } from '@/app/_redux/slices/sessionSlice' //Reducer actions
 import LoginInputs from './LoginInputs'
 
 //TODO create error handling functions for input fields

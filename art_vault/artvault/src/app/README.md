@@ -37,6 +37,7 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 
 -   Route folders should always contain a page.js file to satisfy Next.js 13 routing convention.
 -   Route folders can be given their own child folder for breaking up page sections when necessary.
+-   Non route folders should be prefixed with _: _sharedComponents
 -   App features should be put in the features folder, named using PascalCase.
 -   App features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
 -   Any files or folders related to redux or the redux store should be camelCased.
@@ -44,9 +45,16 @@ Next.js uses a routing system based on the folder layout of the application. Doc
 -   Clean up any console.logs used in testing before pushing production code.
 -   Always format with prettier before issuing a PR.
 
+
+#### _sharedComponents folder:
+
+Components that are shared application-wide will be contained in the "_sharedComponents" folder. A common example of this would be the header and footer of a website or generic buttons that can accept props for minor style changes depending on location within the app.
+
+
 ### Component Structure and File Exports:
 
 Components and files containing functions used application-wide should adhere to the guidelines listed below.
+
 
 #### Guidelines:
 
