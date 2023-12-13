@@ -38,7 +38,7 @@ export default function Login() {
 
     return (
         <div className="flex h-screen w-full justify-center items-center">
-            <div className="flex flex-col w-11/12 sm:w-9/12 md:w-9/12 xl:w-3/6 max-w-screen-sm m-20 bg-offWhite rounded">
+            <div className="flex flex-col w-11/12 sm:w-9/12 md:w-9/12 xl:w-3/6 max-w-screen-sm m-20 bg-alto-900 rounded">
                 <form className="flex flex-col items-center m-8">
                     <LoginInputs props={{ setEmail, setPassword }} />
                     <div className="flex flex-row justify-between w-11/12 mt-3">
