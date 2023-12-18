@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Header() {
     return (
-        <div className="flex flex-col items-center h-2/5 max-h-[300px] w-full 2xl:w-5/6">
+        <div className="flex flex-col items-center h-2/5 max-h-[300px] w-full min-w-[1200px] 2xl:w-5/6">
             <img
                 src="ArtVault.svg"
                 className="absolute h-1/4 max-h-[187px] scale-115 mt-2"
@@ -26,7 +26,7 @@ export default function Header() {
                     <button className="flex w-1/4 h-4/6 justify-center items-center tracking-wider bg-teak rounded-standard">
                         <Link
                             href="/test"
-                            className="text-black hover:text-maroon-flush p-3 text-4xl font-league-gothic"
+                            className="text-black hover:text-maroon-flush p-3 text-2xl md:text-3xl xl:text-4xl font-league-gothic"
                         >
                             SEARCH
                         </Link>
@@ -34,7 +34,7 @@ export default function Header() {
                     <button className="flex w-1/4 h-4/6 justify-center items-center tracking-wider bg-teak rounded-standard">
                         <Link
                             href="/test"
-                            className="text-black hover:text-maroon-flush p-3 text-4xl font-league-gothic"
+                            className="text-black hover:text-maroon-flush p-3 font-league-gothic text-2xl md:text-3xl xl:text-4xl"
                         >
                             BROWSE
                         </Link>
