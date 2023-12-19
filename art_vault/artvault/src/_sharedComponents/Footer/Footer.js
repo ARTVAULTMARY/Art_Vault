@@ -1,5 +1,5 @@
-import NewsSignup from "./NewsSignup";
-import Link from "next/link"
+import NewsSignup from './NewsSignup'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -8,11 +8,15 @@ export default function Footer() {
                 <NewsSignup />
 
                 <div className="flex flex-col items-center justify-center w-1/3">
-                    <Link href="" className="text-xl">My Account</Link>
-                    <Link href="" className="text-xl">FAQ</Link>
+                    <Link href="" className="text-xl">
+                        My Account
+                    </Link>
+                    <Link href="" className="text-xl">
+                        FAQ
+                    </Link>
                 </div>
 
-                <div className="flex flex-row justify-center items-center gap-5 w-1/3">
+                <div className="flex flex-row justify-end items-center gap-5 w-1/3">
                     <img src="Instagram Logo.svg" className="w-1/5"></img>
                     <img src="tiktok Logo.svg" className="w-1/5"></img>
                 </div>

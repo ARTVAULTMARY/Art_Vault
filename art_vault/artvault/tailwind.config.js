@@ -15,6 +15,7 @@ module.exports = {
             wide: '.15em',
             wider: '.2em',
             widest: '.35em',
+            ultrawide: '.45em',
         },
         colors: {
             transparent: 'transparent',

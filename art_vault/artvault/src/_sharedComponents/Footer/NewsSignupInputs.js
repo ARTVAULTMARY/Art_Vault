@@ -10,7 +10,7 @@ export default function NewsSignupInputs({ props }) {
                         id="firstName"
                         type="text"
                         onChange={(e) => props.setFirstName(e.target.value)}
-                        placeholder="Username"
+                        placeholder="First Name"
                     ></input>
                     <p>{/* Error Message */}</p>
                 </div>
@@ -21,7 +21,7 @@ export default function NewsSignupInputs({ props }) {
                         id="lastName"
                         type="text"
                         onChange={(e) => props.setLastName(e.target.value)}
-                        placeholder="Password"
+                        placeholder="Last Name"
                     ></input>
                     <p>{/* Error Message */}</p>
                 </div>
