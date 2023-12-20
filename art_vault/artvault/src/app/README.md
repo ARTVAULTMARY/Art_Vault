@@ -11,7 +11,7 @@ Example App:
 
 app
 ├── redux
-├── Features
+├── features
 │    ├── ArtworkDisplay.js
 │    ├── Login
 │    └── Signup
@@ -26,34 +26,67 @@ app
 
 <br>
 
-## Next.js
+## React - Next.js
 
-### Folder Layout and Naming Convention:
+### Folder Layout and Naming:
 
 Next.js uses a routing system based on the folder layout of the application. Documentation can be found here: https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
-<br>_note: page.js is used instead of index.js from Next.js 13_
+<br>_note: page.js is used instead of index.js from Next.js 13 onwards
 
-#### Basic Guidelines:
+#### Guidelines:
 
 -   Route folders should always contain a page.js file to satisfy Next.js 13 routing convention.
 -   Route folders can be given their own child folder for breaking up page sections when necessary.
--   App Features should be put in the Features folder, named using PascalCase.
--   App Features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
+-   Non route folders should be prefixed with _: _sharedComponents
+-   App features should be put in the features folder, named using PascalCase.
+-   App features should be broken up into multiple components when possible and given their own folder, named intuitively when doing so.
 -   Any files or folders related to redux or the redux store should be camelCased.
 -   Use best discretion when naming folders and breaking up features.
+-   Clean up any console.logs used in testing before pushing production code.
 -   Always format with prettier before issuing a PR.
+
+
+#### _sharedComponents folder:
+
+Components that are shared application-wide will be contained in the "_sharedComponents" folder. A common example of this would be the header and footer of a website or generic buttons that can accept props for minor style changes depending on location within the app.
+
+
+### Component Structure and File Exports:
+
+Components and files containing functions used application-wide should adhere to the guidelines listed below.
+
+
+#### Guidelines:
+
 -   Build for scaleability when pheasible.
+-   Component export names should use PascalCase.
+-   Components should export the main component returning html/jsx as default:
+    ```
+    export default function Component() {
+        return (
+            ...
+        )
+    }
+    ```
+-   Helper Functions should be exported and named using camelCase as follows:
+    ```
+    export const helperFunc = () => {
+        ...
+    }
+    ```
 
 <br>
 
-## Redux Store
+## Redux 
 
 Documentation for Redux-Toolkit can be found here: https://redux-toolkit.js.org/
 
-The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/FeatureName/featureSlice.
+### Store:
+
+The Redux store is contained within the "redux" folder in the src/app directory and shipped in a provider which passes the redux store down to the entire application as state in the "layout.js" file. The "store.js" file configures the redux store and combines each of the reducers located within app/Features/{FeatureName}/{featureSlice}. 
 
 ```
-Example Application :
+Example Application - Store Expanded:
 
 ├── redux
 │   ├── provider.js
@@ -68,12 +101,17 @@ Example Application :
 │   │   ├── LoginForm.js
 │   │   └── LoginInputs.js
 │   └── Signup
-│   │   ├── signupSlice
-│   │   │   ├── thunks.js
-│   │   │   ├── actions.js
-│   │   │   └── reducer.js
-│   │   ├── SignupForm.js
-│   │   └── SignupInputs.js
+│       ├── signupSlice
+│       │   ├── thunks.js
+│       │   ├── actions.js
+│       │   └── reducer.js
+│       ├── SignupForm.js
+│       └── SignupInputs.js
+├── favicon.ico
+├── globals.css
+├── layout.js
+├── page.js
+└── THISREADME.md
 ```
 
 <!-- TODO Adjust normalization convention and objects when real endpoint data is being received -->
@@ -95,7 +133,8 @@ Example of a raw JSON response from a fetch requesting a users artwork:
         id: 2,
         title: 'Piece of art 2',
         tags: ['one','two','three'],
-    }
+    },
+    ...
 }
 
 ```
@@ -113,7 +152,8 @@ userArtwork: {
         id: 2,
         title: 'Piece of art 2',
         tags: ['one','two','three'],
-    }
+    },
+    ...
 }
 
 ```
@@ -144,19 +184,18 @@ More information on tailwind className props and more can be found here: https:/
 
 ### Tailwind Prop Order Priority:
 
-Styled elements should have their className props listed similarly across the entire application when possible, where the main order of priority is:
+Styled elements should have their className props listed similarly across the entire application when possible, where the main order of priority is made up of the following categories:
 
 1. Positional props
 2. Visual styling
 3. Media queries which follow points 1 and 2
 
-_Tailwind prop priority within each category is not strict, but consistency should be sought within components._
+_Prop order priority within each category is not strict, but consistency should be sought within components._
 
-### Passing Props for Conditional Styling:
+<!-- TODO update with correct information -->
+### Pseudo-Classes for Conditional Styling:
 
-Custom style components can be created and changed conditionally, allowing for better UX solutions to things such as displaying form errors.
-
-Basic information on creating style objects can be found here: https://tailwindcss.com/docs/reusing-styles#extracting-components-and-partials
+Tailwind includes many utility classes that can take care of a lot of the conditional logic required for forms and other components requiring human interaction. A list of pseudo-classes can be found here: https://tailwindcss.com/docs/hover-focus-and-other-states#pseudo-classes
 
 <br>
 
@@ -166,4 +205,4 @@ Using basic configuration options from: https://prettier.io/docs/en/configuratio
 
 Instructions for setting up prettier in your editor: https://prettier.io/docs/en/install#set-up-your-editor
 
-Install prettier on your IDE and be sure to run before issuing a PR (Shift + Alt + f in VScode).
+Install prettier on your IDE and be sure to run before issuing a PR (VSCode Default: Shift + Alt + f).
