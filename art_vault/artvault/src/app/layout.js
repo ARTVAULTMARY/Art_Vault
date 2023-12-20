@@ -1,8 +1,6 @@
 import './globals.css'
-import { ReduxProvider } from './redux/provider'
-import { Open_Sans } from 'next/font/google'
-
-const openSans = Open_Sans({ subsets: ['latin'] });
+import { ReduxProvider } from './_redux/provider'
+import { league_gothic, open_sans } from '@/_sharedComponents/Font/Font'
 
 export const metadata = {
     title: 'Create Next App',
@@ -11,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={openSans.className}>
+        <html lang="en" className={`${league_gothic.variable} font-mono, ${open_sans.variable} font-sans`}>
             <body>
                 <ReduxProvider>{children}</ReduxProvider>
             </body>
