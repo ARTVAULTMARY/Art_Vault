@@ -18,7 +18,7 @@ export default function Footer() {
 
                 <div className="flex flex-row justify-end items-center gap-5 w-1/3">
                     <img src="Instagram Logo.svg" className="w-1/5"></img>
-                    <img src="tiktok Logo.svg" className="w-1/5"></img>
+                    <img src="tiktok Logo.svg" className="w-1/5 grayscale"></img>
                 </div>
             </div>
         </div>
