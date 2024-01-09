@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { Provider, useDispatch, useSelector } from 'react-redux'
 import { setUser, removeUser } from '@/app/_redux/slices/sessionSlice' //Reducer actions
 import LoginInputs from './LoginInputs'
 
@@ -10,6 +10,7 @@ export default function Login() {
     const [isRevealed, setIsRevealed] = useState('false')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
 
     const user = useSelector((state) => state.session.user)
 
