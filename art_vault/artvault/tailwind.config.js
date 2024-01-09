@@ -12,7 +12,7 @@ module.exports = {
             tighter: '-.05em',
             tight: '-.025em',
             normal: '0',
-            wide: '.15em',
+            wide: '.10em',
             wider: '.2em',
             widest: '.35em',
             ultrawide: '.45em',
