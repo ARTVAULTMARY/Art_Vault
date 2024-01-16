@@ -17,8 +17,12 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-row justify-end items-center gap-5 w-1/3">
-                    <img src="Instagram Logo.svg" className="w-1/5"></img>
-                    <img src="tiktok Logo.svg" className="w-1/5 grayscale"></img>
+                    <Link href="https://www.instagram.com/artvault.pro/" target='blank' passHref={true} className='w-1/5'>
+                        <img src="Instagram Logo.svg"/>
+                    </Link>
+                    <Link href="https://www.tiktok.com/@artvault.pro" target='blank' passHref={true} className='w-1/5'>
+                        <img src="tiktok Logo.svg" className='grayscale'></img>  
+                    </Link>
                 </div>
             </div>
         </div>
