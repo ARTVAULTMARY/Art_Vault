@@ -1,8 +1,8 @@
 
 export default function ImageCarousel() {
     return (
-        <div className="flex flex-row justify-evenly w-full h-[400px] m-10 bg-white">
-
+        <div className="flex flex-row justify-evenly w-full h-[600px]">
+            <div className="h-full w-full bg-carousel"></div>
         </div>
     )
 }
