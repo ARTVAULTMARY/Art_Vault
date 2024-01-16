@@ -1,10 +1,10 @@
 
 export default function AboutUs() {
     return (
-        <div className="flex flex-row justify-evenly w-full h-[400px] m-10 bg-white">
-            <div className="flex flex-col justify-start items-center w-4/5 max-h-[300px] border-4 border-teak rounded-xl">
+        <div className="flex flex-row justify-evenly w-full h-[400px] my-20 mx-30 bg-white">
+            <div className="flex flex-col justify-start items-center w-4/5 max-h-[350px] border-4 border-teak rounded-xl">
                 <h1 className="font-league-gothic text-5xl tracking-wide mt-3">ABOUT US</h1>
-                <p className="mx-10 mt-3">
+                <p className="mx-10 mt-5">
                     Art Vault was built with the vision of creating a dynamic and inclusive space for artists and art lovers. In a world where galleries 
                     and museums dictate what is considered worthy of attention, Art Vault emerges as a self-curated archive that celebrates the 
                     diversity and authenticity of artistic expression. This platform is not just about showcasing art; it is a testament to the belief 
