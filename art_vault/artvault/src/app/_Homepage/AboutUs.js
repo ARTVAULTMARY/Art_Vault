@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function AboutUs() {
     return (
-        <div className="flex flex-col items-center gap-16 w-full my-20 mx-30 bg-white">
+        <div className="flex flex-col items-center gap-16 w-full mt-20 mx-30 bg-white">
             <button className="flex justify-center items-center tracking-wider bg-teak rounded-standard">
                 <Link
                     href="/test"
