@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function AboutUs() {
     return (
-        <div className="flex flex-col items-center gap-16 w-full h-[400px] mt-20 mx-30 bg-white">
+        <div className="flex flex-col items-center gap-16 w-full my-20 mx-30 bg-white">
             <button className="flex justify-center items-center tracking-wider bg-teak rounded-standard">
                 <Link
                     href="/test"
@@ -11,7 +11,7 @@ export default function AboutUs() {
                     Sign Up 
                 </Link>
             </button>
-            <div className="flex flex-col justify-center items-center w-4/5 max-h-[350px] border-4 border-teak rounded-xl">
+            <div className="flex flex-col justify-center items-center w-4/5 max-h-[350px] border-4 p-10 border-teak rounded-xl">
                 <h1 className="font-league-gothic text-5xl tracking-wide mb-5">ABOUT US</h1>
                 <p className="mx-10 mt-5">
                     Art Vault was built with the vision of creating a dynamic and inclusive space for artists and art lovers. In a world where galleries 
