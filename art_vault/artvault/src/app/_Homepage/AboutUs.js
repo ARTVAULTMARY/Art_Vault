@@ -1,7 +1,16 @@
+import Link from "next/link"
 
 export default function AboutUs() {
     return (
-        <div className="flex flex-row justify-evenly w-full h-[400px] my-20 mx-30 bg-white">
+        <div className="flex flex-col items-center gap-16 w-full h-[400px] mt-20 mx-30 bg-white">
+            <button className="flex justify-center items-center tracking-wider bg-teak rounded-standard">
+                <Link
+                    href="/test"
+                    className="text-black hover:text-maroon-flush py-4 px-20 font-league-gothic text-2xl md:text-3xl xl:text-4xl"
+                >
+                    Sign Up 
+                </Link>
+            </button>
             <div className="flex flex-col justify-center items-center w-4/5 max-h-[350px] border-4 border-teak rounded-xl">
                 <h1 className="font-league-gothic text-5xl tracking-wide mb-5">ABOUT US</h1>
                 <p className="mx-10 mt-5">

@@ -2,6 +2,7 @@ import ArtLovers from "./ArtLoversPanel";
 import HowItWorks from "./HowItWorks";
 import AboutUs from "./AboutUs";
 import ImageCarousel from "./ImageCarousel";
+import ShareYourCreativity from "./ShareYourCreativity";
 
 export default function Homepage() {
     return (
@@ -10,6 +11,7 @@ export default function Homepage() {
             <ArtLovers />
             <HowItWorks />
             <AboutUs />
+            <ShareYourCreativity />
         </div>
     )
 }
