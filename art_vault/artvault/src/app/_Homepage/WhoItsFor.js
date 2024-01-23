@@ -1,7 +1,7 @@
 
 export default function ArtLovers() {
     return (
-        <div className="flex flex-row justify-evenly w-full h-[400px] my-10 p-10 bg-white">
+        <div className="flex flex-row justify-evenly w-full h-[400px] my-10 p-10 gap-3 bg-white">
 
             <div className="flex flex-col justify-start items-center w-1/4 min-w-[600px] max-w-[800px] max-h-[300px] border-4 border-black rounded-xl">
                 <h1 className="font-league-gothic text-4xl tracking-wide my-5">FOR ART LOVERS</h1>
