@@ -12,7 +12,7 @@ export default function ArtLovers() {
                 </ul>
 
                 <button className="relative top-[35px] w-3/4 py-2 tracking-wider bg-teak rounded-standard">
-                    <p className="text-black hover:text-maroon-flush text-2xl md:text-3xl xl:text-4xl font-league-gothic py-2 px-10">
+                    <p className="text-black hover:text-maroon-flush text-4xl font-league-gothic py-2 px-10">
                         Explore the galleries
                     </p>
                 </button>
@@ -27,7 +27,7 @@ export default function ArtLovers() {
                 </ul>
 
                 <button className="relative top-[35px] w-3/4 py-2 tracking-wider bg-teak rounded-standard">
-                    <p className="text-black hover:text-maroon-flush text-2xl md:text-3xl xl:text-4xl font-league-gothic py-2 px-10">
+                    <p className="text-black hover:text-maroon-flush text-4xl font-league-gothic py-2 px-10">
                         Create a gallery for free
                     </p>
                 </button>
