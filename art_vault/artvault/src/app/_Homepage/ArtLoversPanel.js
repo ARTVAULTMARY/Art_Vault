@@ -1,9 +1,9 @@
 
 export default function ArtLovers() {
     return (
-        <div className="flex flex-row justify-evenly w-full h-[400px] my-10 p-10 bg-white gap-20">
+        <div className="flex flex-row justify-evenly w-full h-[400px] my-10 p-10 bg-white">
 
-            <div className="flex flex-col justify-start items-center w-1/2 min-w-[600px] max-w-[800px] max-h-[300px] border-4 border-black rounded-xl">
+            <div className="flex flex-col justify-start items-center w-1/4 min-w-[600px] max-w-[800px] max-h-[300px] border-4 border-black rounded-xl">
                 <h1 className="font-league-gothic text-4xl tracking-wide my-5">FOR ART LOVERS</h1>
                 <ul className="list-disc text-2xl m-2">
                     <li className="m-2"><span className="font-bold">Explore</span> our artist's self-curated galleries.</li>
@@ -18,7 +18,7 @@ export default function ArtLovers() {
                 </button>
             </div>
 
-            <div className="flex flex-col justify-start items-center w-1/2 min-w-[600px] max-w-[800px] max-h-[300px] border-4 border-black rounded-xl">
+            <div className="flex flex-col justify-start items-center w-1/4 min-w-[600px] max-w-[800px] max-h-[300px] border-4 border-black rounded-xl">
                 <h1 className="font-league-gothic text-4xl tracking-wide my-5">FOR ARTISTS</h1>
                 <ul className="list-disc text-2xl m-2">
                     <li className="m-2"><span className="font-bold">Deposit</span> your artwork in self-curated galleries.</li>
