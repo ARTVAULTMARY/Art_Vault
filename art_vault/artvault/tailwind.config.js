@@ -136,9 +136,12 @@ module.exports = {
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-                'carousel' : 'url("/Images/CarouselBackground.svg")',
-                'carousel-large' : 'url("/Images/CarouselBackgroundLarge.svg")',
-                'carousel-angled' : 'url("/Images/CarouselBackgroundAngled.svg")',
+                'carousel' : 'url("/images/CarouselBackground.svg")',
+                'carousel-large' : 'url("/images/CarouselBackgroundLarge.svg")',
+                'carousel-angled' : 'url("/images/CarouselBackgroundAngled.svg")',
+                'spiral' : 'url("/images/carousel_images/spiral_carousel.png")',
+                'hallway' : 'url("/images/carousel_images/hallway_carousel.png")',
+                'shapes' : 'url("/images/carousel_images/shapes_carousel.png")',
             },
             scale: {
               '115': '1.15',
