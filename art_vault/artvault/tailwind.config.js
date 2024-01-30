@@ -138,6 +138,7 @@ module.exports = {
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
                 'carousel' : 'url("/Images/CarouselBackground.svg")',
                 'carousel-large' : 'url("/Images/CarouselBackgroundLarge.svg")',
+                'carousel-angled' : 'url("/Images/CarouselBackgroundAngled.svg")',
             },
             scale: {
               '115': '1.15',
