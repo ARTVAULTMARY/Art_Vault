@@ -9,7 +9,7 @@ export default function Header() {
             />
             <div className="flex flex-row justify-start items-center w-full h-1/3 bg-alto">
                 <Link
-                    href=""
+                    href='/register'
                     className="ml-36 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     SIGN UP
@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div className="flex flex-row justify-between items-center w-full h-1/3 bg-white">
                 <Link
-                    href=""
+                    href='/login'
                     className="flex ml-40 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     LOGIN
