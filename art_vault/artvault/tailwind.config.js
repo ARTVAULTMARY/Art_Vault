@@ -12,9 +12,10 @@ module.exports = {
             tighter: '-.05em',
             tight: '-.025em',
             normal: '0',
-            wide: '.15em',
+            wide: '.10em',
             wider: '.2em',
             widest: '.35em',
+            ultrawide: '.45em',
         },
         colors: {
             transparent: 'transparent',
@@ -129,10 +130,14 @@ module.exports = {
                 'open-sans': 'var(--font-open-sans)',
                 'league-gothic': 'var(--font-league-gothic)',
             },
+            fontSize: {
+                'superxl': ['2.8rem', { lineHeight: '1' }],
+            },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'carousel' : 'url("/Images/CarouselBackground.svg")',
+                'carousel-large' : 'url("/Images/CarouselBackgroundLarge.svg")',
             },
             scale: {
               '115': '1.15',
@@ -144,6 +149,7 @@ module.exports = {
             DEFAULT: '0.25rem',
             md: '0.375rem',
             lg: '0.5rem',
+            xl: '1rem',
             full: '9999px',
             standard: '8px',
         },
