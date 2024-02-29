@@ -38,45 +38,18 @@ export default function Login() {
     }
 
     return (
-        <div className="flex h-screen w-full justify-center items-center">
-            <div className="flex flex-col w-11/12 sm:w-9/12 md:w-9/12 xl:w-3/6 max-w-screen-sm m-20 bg-alto-900 rounded">
-                <form className="flex flex-col items-center m-8">
+        <div className="flex flex-col w-full h-full justify-center items-center">
+                <form className="flex flex-col w-2/3">
                     <LoginInputs props={{ setEmail, setPassword }} />
-                    <div className="flex flex-row justify-between w-11/12 mt-3">
+                    <div className="flex flex-row justify-center my-10">
                         <button
                             onClick={handleLogin}
-                            className="bg-red-400 hover:bg-gold text-darkGrey font-semibold py-2 px-4 border border-gold hover:border-transparent rounded"
+                            className="bg-teak-200 font-semibold py-2 px-8 rounded hover:bg-teak hover:text-white"
                         >
                             Login
                         </button>
-                        <button
-                            onClick={handleClick}
-                            className="bg-red-400 hover:bg-gold text-darkGrey font-semibold py-2 px-4 border border-gold hover:border-transparent rounded"
-                        >
-                            User Info
-                        </button>
-                        <button
-                            onClick={handleLogout}
-                            className="bg-red-400 hover:bg-gold text-darkGrey font-semibold py-2 px-4 border border-gold hover:border-transparent rounded"
-                        >
-                            Logout
-                        </button>
                     </div>
                 </form>
-                {!isRevealed ? (
-                    <div className="flex flex-column justify-center w-full">
-                        <div className="flex flex-col mb-8 items-center">
-                            <h1 className="text-black mb-2 font-bold">
-                                User Information:
-                            </h1>
-                            <p className="text-black">Email: {user?.email}</p>
-                            <p className="text-black">
-                                Password: {user?.password}
-                            </p>
-                        </div>
-                    </div>
-                ) : null}
-            </div>
         </div>
     )
 }

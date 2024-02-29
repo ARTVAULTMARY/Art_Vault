@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import Link from "next/link";
+import Login from "@/app/test/components/LoginForm/Login";
 
 export default function Modal({ children }) {
     const overlay = useRef(null);
@@ -36,20 +37,21 @@ export default function Modal({ children }) {
     return (
         <>
             { signupModalActive ? <div ref={overlay} onClick={onClick} className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-25 backdrop-blur">
-                <div ref={wrapper} className="bg-white m-auto p-10">
-                    <h3>Signup</h3>
-                    <Link href={pathname}>
-                        <button type="button" onClick={dismissModal} className="">Close</button>
+                <div ref={wrapper} className="flex flex-col bg-white items-end p-3 w-1/4 h-[450px] min-w-[500px] max-w-[650px] rounded-md">
+                    <Link href={pathname} className="flex w-fit">
+                        <button type="button" onClick={dismissModal} className="flex fa-solid fa-xmark hover:text-maroon-flush" />
                     </Link>
+                    <h1 className="w-full text-center text-black font-league-gothic text-5xl tracking-wide my-10">SIGNUP</h1>
                 </div>
             </div> : null }
 
             { loginModalActive ? <div ref={overlay} onClick={onClick} className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-25 backdrop-blur">
-                <div ref={wrapper} className="bg-white m-auto p-10">
-                    <h3>Login</h3>
-                    <Link href={pathname}>
-                        <button type="button" onClick={dismissModal} className="p-2">Close</button>
+                <div ref={wrapper} className="flex flex-col bg-white items-end p-3 w-1/4 h-[450px] min-w-[500px] max-w-[650px]  rounded-md">
+                    <Link href={pathname} className="flex w-fit">
+                        <button type="button" onClick={dismissModal} className="flex fa-solid fa-xmark hover:text-maroon-flush" />
                     </Link>
+                    <h1 className="w-full text-center text-black font-league-gothic text-5xl tracking-wide my-10">LOGIN</h1>
+                    <Login />
                 </div>
             </div> : null }
         </>

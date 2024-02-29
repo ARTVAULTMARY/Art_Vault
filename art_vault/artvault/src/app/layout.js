@@ -1,9 +1,8 @@
 import './globals.css'
 import { ReduxProvider } from './_redux/provider'
 import { league_gothic, open_sans } from '@/_sharedComponents/Font/Font'
-import { getServerSession } from 'next-auth'
-import Logout from './logout'
 import Modal from '@/_sharedComponents/Modal/Modal'
+import Script from 'next/script'
 
 export const metadata = {
     title: 'ArtVault',
@@ -18,6 +17,7 @@ export default function RootLayout({ children }) {
                     {children}
                     <Modal />
                 </ReduxProvider>
+                <Script src="https://kit.fontawesome.com/1b32cc131c.js" crossorigin="anonymous"/>
             </body>
         </html>
     )

@@ -3,7 +3,7 @@
 export default function LoginInputs({ props }) {
     return (
         <>
-            <div className="flex flex-col mb-4 w-11/12">
+            <div className="flex flex-col mb-4">
                 <label className="flex text-gray-700 text-sm font-bold mb-2">
                     Email
                 </label>
@@ -17,7 +17,7 @@ export default function LoginInputs({ props }) {
                 <p>{/* Error Message */}</p>
             </div>
 
-            <div className="flex flex-col mb-4 w-11/12">
+            <div className="flex flex-col mb-4">
                 <label className="flex text-gray-700 text-sm font-bold mb-2">
                     Password
                 </label>
