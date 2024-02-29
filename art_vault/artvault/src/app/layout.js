@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${league_gothic.variable} font-mono, ${open_sans.variable} font-sans`}>
-            <body>
+            <body className='flex justify-center'>
                 <ReduxProvider>{children}</ReduxProvider>
             </body>
         </html>
