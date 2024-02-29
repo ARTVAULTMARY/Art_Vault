@@ -5,7 +5,7 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import Link from "next/link";
 import Login from "@/app/test/components/LoginForm/Login";
 
-export default function Modal({ children }) {
+export default function Modal() {
     const overlay = useRef(null);
     const wrapper = useRef(null);
 
@@ -36,8 +36,8 @@ export default function Modal({ children }) {
 
     return (
         <>
-            { signupModalActive ? <div ref={overlay} onClick={onClick} className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-25 backdrop-blur">
-                <div ref={wrapper} className="flex flex-col bg-white items-end p-3 w-1/4 h-[450px] min-w-[500px] max-w-[650px] rounded-md">
+            { signupModalActive ? <div ref={overlay} onClick={onClick} className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-40 backdrop-blur">
+                <div ref={wrapper} className="flex flex-col bg-white items-end p-3 w-1/4 h-[450px] min-w-[500px] max-w-[650px] rounded-md shadow-modal">
                     <Link href={pathname} className="flex w-fit">
                         <button type="button" onClick={dismissModal} className="flex fa-solid fa-xmark hover:text-maroon-flush" />
                     </Link>
@@ -45,8 +45,8 @@ export default function Modal({ children }) {
                 </div>
             </div> : null }
 
-            { loginModalActive ? <div ref={overlay} onClick={onClick} className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-25 backdrop-blur">
-                <div ref={wrapper} className="flex flex-col bg-white items-end p-3 w-1/4 h-[450px] min-w-[500px] max-w-[650px]  rounded-md">
+            { loginModalActive ? <div ref={overlay} onClick={onClick} className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-40 backdrop-blur">
+                <div ref={wrapper} className="flex flex-col bg-white items-end p-3 w-1/4 h-[450px] min-w-[500px] max-w-[650px] rounded-md shadow-modal">
                     <Link href={pathname} className="flex w-fit">
                         <button type="button" onClick={dismissModal} className="flex fa-solid fa-xmark hover:text-maroon-flush" />
                     </Link>

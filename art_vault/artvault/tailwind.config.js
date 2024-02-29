@@ -143,7 +143,8 @@ module.exports = {
                 'shapes' : 'url("/images/carousel_images/shapes_carousel.png")',
             },
             boxShadow: {
-                'carousel-image': '0px 20px 20px -10px rgba(0, 0, 0, 0.4)'
+                'carousel-image': '0px 20px 20px -10px rgba(0, 0, 0, 0.4)',
+                'modal': '0px 20px 40px -10px rgba(0, 0, 0, 0.45)'
             },
             scale: {
               '115': '1.15',
