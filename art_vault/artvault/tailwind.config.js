@@ -136,8 +136,14 @@ module.exports = {
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-                'carousel' : 'url("/Images/CarouselBackground.svg")',
-                'carousel-large' : 'url("/Images/CarouselBackgroundLarge.svg")',
+                'carousel' : 'url("/images/CarouselBackground.svg")',
+                'carousel-alternate' : 'url("/images/CarouselBackgroundAlternate.svg")',
+                'spiral' : 'url("/images/carousel_images/spiral_carousel.png")',
+                'hallway' : 'url("/images/carousel_images/hallway_carousel.png")',
+                'shapes' : 'url("/images/carousel_images/shapes_carousel.png")',
+            },
+            boxShadow: {
+                'carousel-image': '0px 20px 20px -10px rgba(0, 0, 0, 0.4)'
             },
             scale: {
               '115': '1.15',

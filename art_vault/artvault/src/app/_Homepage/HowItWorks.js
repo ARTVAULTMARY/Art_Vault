@@ -9,7 +9,7 @@ export default function HowItWorks() {
                     <h2 className="text-white text-5xl font-bold">1</h2> 
                     <div className="flex flex-col bg-white aspect-square p-6 rounded-md">
                         <h2 className="font-league-gothic h-1/2 text-superxl text-center">CREATE YOUR ACCOUNT</h2>
-                        <img src="/Images/PaintIcon.svg" className="h-1/2 fill-teak"></img>
+                        <img src="/images/PaintIcon.svg" className="h-1/2 fill-teak"></img>
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@ export default function HowItWorks() {
                     <h2 className="text-white text-5xl font-bold">2</h2> 
                     <div className="flex flex-col bg-white aspect-square p-6 rounded-md">
                         <h2 className="font-league-gothic h-1/2 text-superxl text-center">SET UP YOUR GALLERY</h2>
-                        <img src="/Images/HangingFrame.svg" className="h-1/2 fill-teak"></img>
+                        <img src="/images/HangingFrame.svg" className="h-1/2 fill-teak"></img>
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@ export default function HowItWorks() {
                     <h2 className="text-white text-5xl font-bold">3</h2> 
                     <div className="flex flex-col bg-white aspect-square p-6 rounded-md">
                         <h2 className="font-league-gothic h-1/2 text-superxl text-center">SAVE YOUR ARTWORK</h2>
-                        <img src="/Images/UploadIcon.svg" className="h-1/2 fill-teak"></img>
+                        <img src="/images/UploadIcon.svg" className="h-1/2 fill-teak"></img>
                     </div>
                 </div>
 
