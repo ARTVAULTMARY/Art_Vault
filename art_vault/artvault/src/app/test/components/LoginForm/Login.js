@@ -46,7 +46,7 @@ export default function Login() {
                             onClick={handleLogin}
                             className="bg-teak-200 font-semibold py-2 px-8 rounded hover:bg-teak hover:text-white"
                         >
-                            Login
+                            Submit
                         </button>
                     </div>
                 </form>
