@@ -13,7 +13,7 @@ export default async function Header() {
             />
             <div className="flex flex-row justify-start items-center w-full h-1/3 bg-alto">
                 { !session ? <Link
-                    href='/register'
+                    href="?signupModal=true"
                     className="ml-36 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     SIGN UP
@@ -21,7 +21,7 @@ export default async function Header() {
             </div>
             <div className="flex flex-row justify-between items-center w-full h-1/3 bg-white">
                 { !session ? <Link
-                    href='/login'
+                    href="?loginModal=true"
                     className="flex ml-40 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     LOGIN
