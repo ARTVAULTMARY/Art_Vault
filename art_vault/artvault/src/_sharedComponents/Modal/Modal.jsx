@@ -29,8 +29,8 @@ export default function Modal({ children }) {
     },[dismissModal]);
 
     useEffect(() => {
-        document.addEventListener("keypress", onKeyPress);
-        return () => document.removeEventListener("keypress", onKeyPress);
+        document.addEventListener("keydown", onKeyPress);
+        return () => document.removeEventListener("keydown", onKeyPress);
     }, [onKeyPress]);
 
     return (
