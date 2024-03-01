@@ -18,7 +18,7 @@ export default function InputField(props) {
                 w-full py-2 px-3 leading-tight focus:bg-teak-100"/>
                 {errorMessage && !isValid ? 
                     <p className="h-5 text-sm text-maroon-flush">{errorMessage}</p> : 
-                    <p className="h-5 text-sm text-maroon-flush"></p>
+                    <p className="h-5 text-sm"></p>
                 }
             </div>
         </div>
