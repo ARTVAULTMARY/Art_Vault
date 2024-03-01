@@ -29,7 +29,7 @@ export default async function Header() {
                 <div className="flex flex-row justify-center items-center w-1/3 h-full gap-10">
                     <button className="flex w-1/4 h-4/6 justify-center items-center tracking-wider bg-teak rounded-standard">
                         <Link
-                            href="/test"
+                            href=""
                             className="text-black hover:text-maroon-flush p-3 text-2xl md:text-3xl xl:text-4xl font-league-gothic"
                         >
                             SEARCH
@@ -37,7 +37,7 @@ export default async function Header() {
                     </button>
                     <button className="flex w-1/4 h-4/6 justify-center items-center tracking-wider bg-teak rounded-standard">
                         <Link
-                            href="/test"
+                            href=""
                             className="text-black hover:text-maroon-flush p-3 font-league-gothic text-2xl md:text-3xl xl:text-4xl"
                         >
                             BROWSE

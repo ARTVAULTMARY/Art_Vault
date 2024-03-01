@@ -1,4 +1,5 @@
 "use client"
+
 import useForm from "../useForm";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
@@ -23,8 +24,7 @@ export default function LoginForm() {
             router.push("/");
             router.refresh();
         } else {
-            console.log(response.error);
-            setResponseError("Invalid Account Information")
+            setResponseError(response.error);
         }
     };
 

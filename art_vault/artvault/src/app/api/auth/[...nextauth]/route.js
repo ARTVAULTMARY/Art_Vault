@@ -13,7 +13,7 @@ const handler = NextAuth({
   },
     providers: [
         CredentialsProvider({
-        credentials: {
+          credentials: {
             username: {},
             password: {},
           },
@@ -23,6 +23,11 @@ const handler = NextAuth({
                 username: credentials.username,
               },
             })
+            
+            if (!user) {
+              console.error(`Query for ${credentials.username}: User does not exist`)
+              throw new Error("Invalid username");
+            };
 
             const passwordCorrect = await compare(
               credentials.password || "", 
@@ -38,9 +43,9 @@ const handler = NextAuth({
                 username: user.username,
               }
             }
-            return null;
+            throw new Error("Invalid credentials");
           }
-    })
+        })
   ]
 })
 

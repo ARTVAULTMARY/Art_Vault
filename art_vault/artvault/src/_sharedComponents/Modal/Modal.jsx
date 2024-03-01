@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import Link from "next/link";
-import LoginForm from "@/app/test/components/Form/Login/LoginForm";
-import SignupForm from "@/app/test/components/Form/Signup/SignupForm";
+import LoginForm from "@/app/_test/components/Form/Login/LoginForm";
+import SignupForm from "@/app/_test/components/Form/Signup/SignupForm";
 
 export default function Modal() {
     const overlay = useRef(null);
@@ -53,7 +53,6 @@ export default function Modal() {
                         <button type="button" onClick={dismissModal} className="flex fa-solid fa-xmark hover:text-maroon-flush" />
                     </Link>
                     <h1 className="w-full text-center text-black font-league-gothic text-5xl tracking-wide mt-10">LOGIN</h1>
-                    {/* <Login /> */}
                     <LoginForm />
                 </div>
             </div> : null }
