@@ -7,8 +7,7 @@ import { signIn } from 'next-auth/react'
 import { loginForm } from "../helpers/formConfig";
 
 export default function LoginForm() {
-    const { renderFormInputs, isFormValid, form } = useForm(loginForm);
-    const [responseError, setResponseError] = useState("");
+    const { renderFormInputs, isFormValid, form, responseError, setResponseError } = useForm(loginForm);
     const router = useRouter()
 
     const handleSubmit = async (e) => {

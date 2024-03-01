@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react'
 
 export default function useForm(formObj) {
     const [form, setForm] = useState(formObj);
+    const [responseError, setResponseError] = useState("");
 
     function renderFormInputs() {
         return Object.values(form).map((inputObj) => {
@@ -43,6 +44,8 @@ export default function useForm(formObj) {
 
         const isValidInput = isInputFieldValid(inputObj);
 
+        setResponseError(null);
+
         if (isValidInput && !inputObj.valid) {
             inputObj.valid = true;
         } else if (!isValidInput && inputObj.valid) {
@@ -53,5 +56,5 @@ export default function useForm(formObj) {
         setForm({...form, [name]: inputObj})
     }, [form, isInputFieldValid]);
 
-    return { renderFormInputs, isFormValid, form };
+    return { renderFormInputs, isFormValid, form, responseError, setResponseError };
 };
