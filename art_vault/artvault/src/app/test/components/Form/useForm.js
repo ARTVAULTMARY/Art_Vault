@@ -1,4 +1,6 @@
 import { useState, useCallback } from "react";
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react'
 
 export default function useForm(formObj) {
     const [form, setForm] = useState(formObj);
@@ -51,5 +53,5 @@ export default function useForm(formObj) {
         setForm({...form, [name]: inputObj})
     }, [form, isInputFieldValid]);
 
-    return { renderFormInputs, isFormValid };
+    return { renderFormInputs, isFormValid, form };
 };

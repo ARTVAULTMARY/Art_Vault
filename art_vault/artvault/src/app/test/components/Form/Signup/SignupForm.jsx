@@ -1,3 +1,4 @@
+"use client"
 import useForm from "../useForm";
 import { signupForm } from "../helpers/formConfig";
 
