@@ -6,7 +6,7 @@ export default function useForm(formObj) {
     function renderFormInputs() {
         return Object.values(form).map((inputObj) => {
             const { value, label, errorMessage, valid, renderInput } = inputObj;
-            return renderInput(onInputChange, value, label, errorMessage, valid);
+            return renderInput(onInputChange, value, valid, errorMessage, label);
         });
     };
 
@@ -14,14 +14,12 @@ export default function useForm(formObj) {
         let isValid = true;
         const arr = Object.values(form);
 
-        let i = 0;
-        while (i < arr.length) {
+        for (let i = 0; i < arr.length; i++) {
             if (!arr[i].valid) {
-                isValid = false;
-                break;
-            };
-            i++;
-        };
+              isValid = false;
+              break;
+            }
+        }
 
         return isValid;
     }, [form]);
