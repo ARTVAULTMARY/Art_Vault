@@ -25,8 +25,7 @@ const handler = NextAuth({
             })
             
             if (!user) {
-              console.error(`Query for ${credentials.username}: User does not exist`)
-              throw new Error("Invalid username");
+              throw new Error("Invalid credentials");
             };
 
             const passwordCorrect = await compare(
