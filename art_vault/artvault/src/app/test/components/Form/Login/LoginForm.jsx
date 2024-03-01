@@ -12,16 +12,18 @@ export default function LoginForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('form data handleSubmit: ', form.email.value, form.password.value)
+        //TODO fix undefined data in response: 
         const response = await signIn('credentials', {
-            username: form.email.value,
-            password: form.password.value,
+            username: form?.email.value,
+            password: form?.password.value,
             redirect: false,
         });
-        console.log({response})
-        if(!response?.error){
-            router.push("/")
-            router.refresh()
-        }
+
+        if (!response?.error) {
+            router.push("/");
+            router.refresh();
+        };
+        console.log({ response });
     };
 
     return (
@@ -31,7 +33,7 @@ export default function LoginForm() {
                 <button 
                     type="submit" 
                     disabled={!isFormValid()} 
-                    className="w-1/3 bg-teak-200 font-semibold mt-10 py-2 px-8 rounded enabled:cursor-pointer enabled:hover:bg-teak enabled:hover:text-white"
+                    className="w-1/3 bg-teak-200 font-semibold mt-10 py-2 px-8 rounded enabled:bg-teak-300 enabled:cursor-pointer enabled:hover:bg-teak enabled:hover:text-white"
                 >
                     Submit
                 </button>

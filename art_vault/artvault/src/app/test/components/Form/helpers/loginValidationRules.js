@@ -9,7 +9,7 @@ function createValidationRule(ruleName, errorMessage, validateFunction ) {
 export const requiredRule = (inputName) => {
     return createValidationRule(
         "required",
-        `${inputName} required`,
+        `${inputName} Required`,
         (inputValue, formObj) => inputValue.length !== 0
     );
 };

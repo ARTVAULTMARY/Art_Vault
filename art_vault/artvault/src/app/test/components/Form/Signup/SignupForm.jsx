@@ -12,7 +12,7 @@ export default function SignupForm() {
                 <button 
                     type="submit" 
                     disabled={!isFormValid()} 
-                    className="w-1/3 bg-teak-200 font-semibold mt-10 py-2 px-8 rounded enabled:cursor-pointer enabled:hover:bg-teak enabled:hover:text-white"
+                    className="w-1/3 bg-teak-200 font-semibold mt-10 py-2 px-8 rounded enabled:bg-teak-300 enabled:cursor-pointer enabled:hover:bg-teak enabled:hover:text-white"
                 >
                     Submit
                 </button>

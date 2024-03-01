@@ -29,29 +29,29 @@ function createFormFieldConfig(label, name, type, defaultValue = "") {
 export const signupForm = {
     name: {
         ...createFormFieldConfig("Full Name", "name", "text"),
-        validationRules: [requiredRule("name")],
+        validationRules: [requiredRule("Name")],
     },
     email: {
         ...createFormFieldConfig("Email", "email", "email"),
-        validationRules: [requiredRule("email")],
+        validationRules: [requiredRule("Email")],
     },
     password: {
         ...createFormFieldConfig("Password", "password", "password"),
-        validationRules: [requiredRule("password")],
+        validationRules: [requiredRule("Password")],
     },
     confirmPassword: {
-        ...createFormFieldConfig("Confirm Password", "confirmPassword", "Password"),
-        validationRules: [requiredRule("confirmPassword")],
+        ...createFormFieldConfig("Confirm Password", "confirmPassword", "password"),
+        validationRules: [requiredRule("Confirm Password")],
     }
 };
 
 export const loginForm = {
     email: {
         ...createFormFieldConfig("Email", "email", "email"),
-        validationRules: [requiredRule("email")],
+        validationRules: [requiredRule("Email")],
     },
     password: {
         ...createFormFieldConfig("Password", "password", "password"),
-        validationRules: [requiredRule("password")],
+        validationRules: [requiredRule("Password")],
     },
 };

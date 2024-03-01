@@ -5,7 +5,7 @@ export default function AboutUs() {
         <div className="flex flex-col items-center gap-16 w-full mt-20 mx-30 bg-white">
             <button className="flex justify-center items-center tracking-wider bg-teak rounded-standard">
                 <Link
-                    href="/test"
+                    href="?signupModal=true"
                     className="text-black hover:text-maroon-flush py-4 px-20 font-league-gothic text-2xl md:text-3xl xl:text-4xl"
                 >
                     Sign Up 
