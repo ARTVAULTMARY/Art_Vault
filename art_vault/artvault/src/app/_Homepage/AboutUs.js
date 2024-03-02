@@ -6,6 +6,7 @@ export default function AboutUs() {
             <button className="flex justify-center items-center tracking-wider bg-teak rounded-standard">
                 <Link
                     href="?signupModal=true"
+                    scroll={false}
                     className="text-black hover:text-maroon-flush py-4 px-20 font-league-gothic text-2xl md:text-3xl xl:text-4xl"
                 >
                     Sign Up 

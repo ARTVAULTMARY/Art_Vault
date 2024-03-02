@@ -23,7 +23,10 @@ export default function NewsSignup() {
                     props={{ setEmail, setFirstName, setLastName }}
                 />
                 <div className="flex  justify-center items-center tracking-wider bg-teak rounded-standard">
-                    <button className="p-3 text-black hover:text-maroon-flush font-open-sans font-bold text-2xl md:text-3xl xl:text-2xl">
+                    <button
+                        type="button"
+                        className="text-black hover:text-maroon-flush text-2xl md:text-3xl xl:text-4xl tracking-wide font-league-gothic py-2 px-10"
+                    >
                         Subscribe
                     </button>
                 </div>

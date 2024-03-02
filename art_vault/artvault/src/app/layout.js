@@ -12,12 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${league_gothic.variable} font-mono, ${open_sans.variable} font-sans`}>
+            <Script src="https://kit.fontawesome.com/1b32cc131c.js"/>
             <body>
                 <ReduxProvider>
                     {children}
                     <Modal />
                 </ReduxProvider>
-                <Script src="https://kit.fontawesome.com/1b32cc131c.js"/>
             </body>
         </html>
     )

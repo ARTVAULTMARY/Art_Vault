@@ -10,6 +10,7 @@ export default function ShareYourCreativity() {
                 <button className="relative w-2/3 top-[45px] py-2 tracking-wide bg-teak rounded-standard">
                     <Link
                         href="?signupModal=true"
+                        scroll={false}
                         className="text-black hover:text-maroon-flush text-2xl md:text-3xl xl:text-4xl font-league-gothic py-2 px-10"
                     >
                         Sign Up 

@@ -4,7 +4,7 @@ import useForm from "../useForm";
 import { signupForm } from "../helpers/formConfig";
 
 export default function SignupForm() {
-    const { renderFormInputs, isFormValid } = useForm(signupForm);
+    const { renderFormInputs, isFormValid, responseError } = useForm(signupForm);
 
     return (
         <div className="flex flex-col w-full h-full">
