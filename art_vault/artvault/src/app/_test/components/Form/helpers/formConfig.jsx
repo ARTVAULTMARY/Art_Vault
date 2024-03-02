@@ -1,6 +1,6 @@
 import InputField from "../InputField";
 
-import { requiredRule } from "./loginValidationRules";
+import { minLengthRule, passwordMatchRule, requiredRule, maxLengthRule } from "./loginValidationRules";
 
 function createFormFieldConfig(label, name, type, defaultValue = "") {
     return {
@@ -26,10 +26,15 @@ function createFormFieldConfig(label, name, type, defaultValue = "") {
     };
 };
 
+//TODO: Add validation rules to form objects
 export const signupForm = {
     name: {
         ...createFormFieldConfig("Full Name", "name", "text"),
-        validationRules: [requiredRule("Name")],
+        validationRules: [
+            requiredRule("Name"),
+            minLengthRule("Name", 2),
+            maxLengthRule("Name", 25),
+        ],
     },
     email: {
         ...createFormFieldConfig("Email", "email", "email"),
@@ -37,18 +42,22 @@ export const signupForm = {
     },
     password: {
         ...createFormFieldConfig("Password", "password", "password"),
-        validationRules: [requiredRule("Password")],
+        validationRules: [
+            requiredRule("Password"),
+            minLengthRule("Password", 8),
+            maxLengthRule("Password", 20),
+        ],
     },
     confirmPassword: {
         ...createFormFieldConfig("Confirm Password", "confirmPassword", "password"),
-        validationRules: [requiredRule("Confirm Password")],
+        validationRules: [passwordMatchRule()],
     }
 };
 
 export const loginForm = {
     email: {
-        ...createFormFieldConfig("Email", "email", "email"),
-        validationRules: [requiredRule("Email")],
+        ...createFormFieldConfig("Username", "email", "email"),
+        validationRules: [requiredRule("Username")],
     },
     password: {
         ...createFormFieldConfig("Password", "password", "password"),

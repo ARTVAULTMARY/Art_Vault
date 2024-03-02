@@ -1,3 +1,5 @@
+//Validation functions for formConfig
+
 function createValidationRule(ruleName, errorMessage, validateFunction ) {
     return {
         name: ruleName,
@@ -14,10 +16,26 @@ export const requiredRule = (inputName) => {
     );
 };
 
-export const minLengthRule = (inputName) => {
+export const minLengthRule = (inputName, minChars) => {
     return createValidationRule(
         "minLength",
-        `${inputName} should contain `,
-        (inputValue, formObj) => inputValue.length !== 0
+        `${inputName} should contain at least ${minChars} characters`,
+        (inputValue, formObj) => inputValue.length >= minChars
     );
 };
+
+export function maxLengthRule(inputName, maxChar) {
+    return createValidationRule(
+        'maxLength',
+        `${inputName} cannot contain more than ${maxChar} characters`,
+        (inputValue, formObj) => inputValue.length <= maxChar
+    );
+};
+
+export function passwordMatchRule() {
+    return createValidationRule(
+        'passwordMatch',
+        `passwords do not match`,
+        (inputValue, formObj) => inputValue === formObj.password.value
+    );
+}

@@ -132,6 +132,7 @@ module.exports = {
             },
             fontSize: {
                 'superxl': ['2.8rem', { lineHeight: '1' }],
+                'spinnermd': ['1.3rem', { lineHeight: '1' }],
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

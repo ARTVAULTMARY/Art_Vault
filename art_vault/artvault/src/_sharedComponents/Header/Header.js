@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import Logout from '@/app/logout'
+import Logout from './Logout';
 
 export default async function Header() {
     const session = await getServerSession();
