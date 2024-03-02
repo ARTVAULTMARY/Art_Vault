@@ -1,5 +1,5 @@
 import Header from '@/_sharedComponents/Header/Header'
-import Homepage from './_Homepage/Homepage'
+import Homepage from './_components/Homepage/Homepage'
 import Footer from '@/_sharedComponents/Footer/Footer'
 
 export default function Home() {
