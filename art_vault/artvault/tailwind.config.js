@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/_components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
         './src/_sharedComponents/**/*.{js,ts,jsx,tsx,mdx}',
     ],
@@ -149,7 +150,7 @@ module.exports = {
             },
             scale: {
               '115': '1.15',
-            }
+            },
         },
         borderRadius: {
             none: '0',

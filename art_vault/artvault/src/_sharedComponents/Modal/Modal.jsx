@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import Link from "next/link";
 import LoginForm from "@/app/_components/Form/Login/LoginForm";
@@ -30,7 +30,7 @@ export default function Modal() {
         if (e.key === "Escape") dismissModal();
     },[dismissModal]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (signupModalActive || loginModalActive) {
             document.body.classList.add("overflow-y-hidden")
         } else {
