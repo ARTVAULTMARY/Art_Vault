@@ -16,7 +16,7 @@ export default function SignupForm() {
             method: 'POST',
             body: JSON.stringify({
                 email: form.email.value,
-                username: form.username.value,
+                username: form.name.value,
                 password: form.password.value,
             }),
         });

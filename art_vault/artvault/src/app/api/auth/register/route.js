@@ -21,5 +21,5 @@ export async function POST(request){
         console.log({ e })
     }
 
-    return NextResponse.json({ message: 'success' })
+    return NextResponse.json({ message: 'signup success' })
 }
