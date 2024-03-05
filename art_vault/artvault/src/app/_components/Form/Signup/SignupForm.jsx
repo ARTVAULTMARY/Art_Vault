@@ -1,12 +1,15 @@
 "use client"
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import useForm from "../useForm";
 import { signupForm } from "../helpers/formConfig";
 
 export default function SignupForm() {
     const { renderFormInputs, isFormValid, form, responseError, setResponseError } = useForm(signupForm);
     const [isLoading, setIsLoading] = useState(false);
+
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         setResponseError(null);
@@ -24,6 +27,8 @@ export default function SignupForm() {
         if(response.ok) {
             setIsLoading(false);
             console.log({ response });
+            router.push("/");
+            router.refresh();
         } else {
             setIsLoading(false);
             setResponseError(response.error)
