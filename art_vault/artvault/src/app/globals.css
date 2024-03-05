@@ -20,7 +20,7 @@
     ::-webkit-scrollbar {
         width: 10px;
     }::-webkit-scrollbar-track {
-        background: theme('colors.alto.50');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        background: theme('colors.alto.100');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
     }::-webkit-scrollbar-thumb {
         background: theme('colors.boulder.800');
         border-radius: 10px;

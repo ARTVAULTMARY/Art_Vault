@@ -29,7 +29,7 @@ function createFormFieldConfig(label, name, type, defaultValue = "") {
 //TODO: Add validation rules to form objects
 export const signupForm = {
     name: {
-        ...createFormFieldConfig("Full Name", "name", "text"),
+        ...createFormFieldConfig("Name", "name", "text"),
         validationRules: [
             requiredRule("Name"),
             minLengthRule("Name", 2),

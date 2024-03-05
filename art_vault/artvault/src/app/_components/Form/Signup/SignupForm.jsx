@@ -12,7 +12,6 @@ export default function SignupForm() {
         setResponseError(null);
         e.preventDefault();
         setIsLoading(true);
-        //TODO move query into separate file 
         const response = await fetch('/api/auth/register', {
             method: 'POST',
             body: JSON.stringify({
