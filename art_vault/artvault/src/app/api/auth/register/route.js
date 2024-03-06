@@ -15,11 +15,11 @@ export async function POST(request){
               username: username,
               password: hashedPassword,
             },
-          })
+        })
 
     } catch (e) {
-        console.log({e})
+        console.log({ e })
     }
 
-    return NextResponse.json({ message: 'success' })
+    return NextResponse.json({ message: 'signup success' })
 }

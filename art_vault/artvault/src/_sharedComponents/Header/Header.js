@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import Logout from '@/app/logout'
+import Logout from './Logout';
 
 export default async function Header() {
     const session = await getServerSession();
@@ -14,6 +14,7 @@ export default async function Header() {
             <div className="flex flex-row justify-start items-center w-full h-1/3 bg-alto">
                 { !session ? <Link
                     href="?signupModal=true"
+                    scroll={false}
                     className="ml-36 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     SIGN UP
@@ -22,6 +23,7 @@ export default async function Header() {
             <div className="flex flex-row justify-between items-center w-full h-1/3 bg-white">
                 { !session ? <Link
                     href="?loginModal=true"
+                    scroll={false}
                     className="flex ml-40 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     LOGIN

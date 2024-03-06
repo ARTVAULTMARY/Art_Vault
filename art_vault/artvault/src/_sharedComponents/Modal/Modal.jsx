@@ -1,10 +1,10 @@
 'use client'
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import Link from "next/link";
-import LoginForm from "@/app/_test/components/Form/Login/LoginForm";
-import SignupForm from "@/app/_test/components/Form/Signup/SignupForm";
+import LoginForm from "@/app/_components/Form/Login/LoginForm";
+import SignupForm from "@/app/_components/Form/Signup/SignupForm";
 
 export default function Modal() {
     const overlay = useRef(null);
@@ -29,6 +29,14 @@ export default function Modal() {
     const onKeyPress = useCallback((e) => {
         if (e.key === "Escape") dismissModal();
     },[dismissModal]);
+
+    useLayoutEffect(() => {
+        if (signupModalActive || loginModalActive) {
+            document.body.classList.add("overflow-y-hidden")
+        } else {
+        document.body.classList.remove("overflow-y-hidden")
+        }
+    }, [signupModalActive, loginModalActive]);
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyPress);
