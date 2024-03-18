@@ -32,8 +32,12 @@
 /* Custom  */
 @layer components {
     .dash-button {
-        background: theme('colors.alto.DEFAULT');
+        box-sizing: content-box;
+        background: theme('colors.alto.100');
+        border: solid 5px;
+        border-color: theme('colors.alto.DEFAULT');
         border-radius: 14px;
         font-family: theme('fontFamily.league-gothic');
+        font-size: xx-large;
     }
 }
