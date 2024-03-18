@@ -1,5 +1,14 @@
-export default function DashboardPage(){
+import Link from "next/link";
+import { getServerSession } from 'next-auth'
+
+export default async function UserDashboard(){
+    const session = await getServerSession();
+    console.log('session: ', session)
+
     return (
-    <div>private dashboard page - you need to be logged in to view this</div>
+        <div className="flex flex-col">
+            dash test
+            {session.user?.name}
+        </div>
     )
 }
