@@ -6,7 +6,7 @@ export default async function Header() {
     const session = await getServerSession();
 
     return (
-        <div className="flex flex-col items-center h-2/5 max-h-[300px] min-h-[300px] w-full min-w-[1200px] 2xl:w-5/6">
+        <div className="flex flex-col items-center min-h-[300px] w-full min-w-[1200px] 2xl:w-5/6">
             <img
                 src="/images/ArtVault.svg"
                 className="absolute h-1/4 max-h-[187px] min-h-[187px] scale-115 mt-2"

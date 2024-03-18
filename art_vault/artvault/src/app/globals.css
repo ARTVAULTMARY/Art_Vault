@@ -28,3 +28,12 @@
         background: theme('colors.boulder.600');
     }
 }
+
+/* Custom  */
+@layer components {
+    .dash-button {
+        background: theme('colors.alto.DEFAULT');
+        border-radius: 14px;
+        font-family: theme('fontFamily.league-gothic');
+    }
+}
