@@ -4,7 +4,7 @@ import Footer from '@/_sharedComponents/Footer/Footer'
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center max-w-[2300px] h-screen bg-transparent">
+        <div className="flex flex-col items-center max-w-[2300px] min-w-[1268px] 2xl:w-9/12 h-screen bg-transparent">
             <Header />
             <Homepage />
             <Footer />
