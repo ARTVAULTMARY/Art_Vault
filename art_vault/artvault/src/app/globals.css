@@ -40,4 +40,14 @@
         font-family: theme('fontFamily.league-gothic');
         font-size: xx-large;
     }
+
+    .dash-button-hover {
+        box-sizing: content-box;
+        background: theme('colors.alto.300');
+        border: solid 5px;
+        border-color: theme('colors.alto.400');
+        border-radius: 14px;
+        font-family: theme('fontFamily.league-gothic');
+        font-size: xx-large;
+    }
 }
