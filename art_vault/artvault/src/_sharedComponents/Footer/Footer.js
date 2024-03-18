@@ -8,7 +8,7 @@ export default function Footer() {
                 <NewsSignup />
 
                 <div className="flex flex-col items-center justify-center w-1/3">
-                    <Link href="" className="text-xl">
+                    <Link href="/dashboard" className="text-xl">
                         My Account
                     </Link>
                     <Link href="" className="text-xl">
