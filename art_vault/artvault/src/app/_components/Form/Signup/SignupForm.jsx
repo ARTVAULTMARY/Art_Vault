@@ -23,6 +23,8 @@ export default function SignupForm() {
                 password: form.password.value,
             }),
         });
+        
+        const responseData = await response.json();
 
         if(response.ok) {
             setIsLoading(false);
@@ -31,7 +33,7 @@ export default function SignupForm() {
             router.refresh();
         } else {
             setIsLoading(false);
-            setResponseError(response.error)
+            setResponseError(responseData.message)
         };
     };
 
