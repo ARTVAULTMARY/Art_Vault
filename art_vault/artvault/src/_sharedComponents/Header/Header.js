@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import Logout from './Logout';
+import DashboardButton from './DashboardButton';
 
 export default async function Header() {
     const session = await getServerSession();
@@ -27,7 +27,7 @@ export default async function Header() {
                     className="flex ml-40 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     LOGIN
-                </Link> : <Logout/> }
+                </Link> : <DashboardButton /> }
                 <div className="flex flex-row justify-center items-center w-1/3 h-full gap-10">
                     <button className="flex w-1/4 h-4/6 justify-center items-center tracking-wider bg-teak rounded-standard">
                         <Link
