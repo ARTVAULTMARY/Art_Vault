@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import Logout from './Logout';
+import DashboardButton from './DashboardButton';
 
 export default async function Header() {
     const session = await getServerSession();
 
     return (
-        <div className="flex flex-col items-center h-2/5 max-h-[300px] min-h-[300px] w-full min-w-[1200px] 2xl:w-5/6">
+        <div className="flex flex-col items-center min-h-[300px] w-full min-w-[1200px]">
             <img
                 src="/images/ArtVault.svg"
                 className="absolute h-1/4 max-h-[187px] min-h-[187px] scale-115 mt-2"
@@ -27,7 +27,7 @@ export default async function Header() {
                     className="flex ml-40 text-black font-league-gothic text-5xl tracking-wide hover:text-maroon-flush"
                 >
                     LOGIN
-                </Link> : <Logout/> }
+                </Link> : <DashboardButton /> }
                 <div className="flex flex-row justify-center items-center w-1/3 h-full gap-10">
                     <button className="flex w-1/4 h-4/6 justify-center items-center tracking-wider bg-teak rounded-standard">
                         <Link

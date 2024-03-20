@@ -28,3 +28,26 @@
         background: theme('colors.boulder.600');
     }
 }
+
+/* Custom  */
+@layer components {
+    .dash-button {
+        box-sizing: content-box;
+        background: theme('colors.alto.100');
+        border: solid 5px;
+        border-color: theme('colors.alto.DEFAULT');
+        border-radius: 14px;
+        font-family: theme('fontFamily.league-gothic');
+        font-size: xx-large;
+    }
+
+    .dash-button-hover {
+        box-sizing: content-box;
+        background: theme('colors.alto.300');
+        border: solid 5px;
+        border-color: theme('colors.alto.400');
+        border-radius: 14px;
+        font-family: theme('fontFamily.league-gothic');
+        font-size: xx-large;
+    }
+}

@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${league_gothic.variable} font-mono, ${open_sans.variable} font-sans, customScrollbarStyle`}>
             <Script src="https://kit.fontawesome.com/1b32cc131c.js"/>
-            <body>
+            <body className='flex flex-col items-center'>
                 <ReduxProvider>
                     {children}
                     <Modal />
