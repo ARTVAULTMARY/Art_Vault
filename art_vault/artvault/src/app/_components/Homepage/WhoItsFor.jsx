@@ -6,7 +6,7 @@ export default function ArtLovers() {
             <div className="flex flex-col justify-start items-center w-1/4 min-w-[600px] max-w-[800px] max-h-[300px] border-4 border-black rounded-xl">
                 <h1 className="font-league-gothic text-4xl tracking-wide my-5">FOR ART LOVERS</h1>
                 <ul className="list-disc text-2xl m-2">
-                    <li className="m-2"><span className="font-bold">Explore</span> our artist's self-curated galleries.</li>
+                    <li className="m-2"><span className="font-bold">Explore</span> our artist`&apos;`s self-curated galleries.</li>
                     <li className="m-2"><span className="font-bold">Discover</span> new artists and artwork.</li>
                     <li className="m-2"><span className="font-bold">Enjoy</span> a personalized art experience.</li>
                 </ul>
