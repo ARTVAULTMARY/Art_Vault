@@ -20,9 +20,9 @@ export default function AboutUs() {
                     diversity and authenticity of artistic expression. This platform is not just about showcasing art; it is a testament to the belief 
                     that every artist has a unique voice that deserves to be heard.
                     Art Vault serves as a digital sanctuary where creators can share their work directly with a global audience of art enthusiasts. 
-                    Unlike conventional art spaces, Art Vault removes the barriers imposed by gatekeepers or curators, ensuring that the art experience remains unfiltered and true to the artist's vision. 
+                    Unlike conventional art spaces, Art Vault removes the barriers imposed by gatekeepers or curators, ensuring that the art experience remains unfiltered and true to the artist`&apos;`s vision. 
                     By empowering artists to preserve and showcase their work, Art Vault becomes a timeless repository for future generations to explore the rich tapestry of contemporary creativity. 
-                    With its innovative approach, Art Vault is on a mission to build the world's largest artist-curated arts archive, fostering a vibrant community that connects artists 
+                    With its innovative approach, Art Vault is on a mission to build the world`&apos;`s largest artist-curated arts archive, fostering a vibrant community that connects artists 
                     and art lovers in a truly modern and inspirational way.
                 </p>
             </div>
