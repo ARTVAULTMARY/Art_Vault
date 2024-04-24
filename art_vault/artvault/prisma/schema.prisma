@@ -11,18 +11,16 @@ datasource db {
 }
 
 model User {
-  id             String        @id @default(cuid())
+  id             String    @id @default(cuid())
   name           String?
   image          String?
-  email          String        @unique
+  email          String    @unique
   emailVerified  DateTime?
   hashedPassword String?
-  createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
-  Account  Account[]
-  Session  Session[]
-
-  @@map(name: "users")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  accounts       Account[]
+  sessions       Session[]
 }
 
 model Account {
