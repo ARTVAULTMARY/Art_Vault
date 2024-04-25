@@ -17,3 +17,10 @@ model User {
   password      String
   @@map(name: "users")
 }
+
+model Gallery {
+  name          String   @unique
+  title         String   @unique
+  user_id       String   @unique
+  images        String[] 
+}
