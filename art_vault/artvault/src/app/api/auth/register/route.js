@@ -35,8 +35,16 @@ export async function POST(request){
             },
         })
 
-    } catch (error) {
-        console.log({ error })
+        const gallery = await prisma.gallery.create({
+            data: {
+              user_id: user.id,
+              name: username,
+              title: "Default Gallery",
+            },
+        })
+
+    } catch (e) {
+        console.log({ e })
     }
 
     return NextResponse.json({ message: 'signup success' })
