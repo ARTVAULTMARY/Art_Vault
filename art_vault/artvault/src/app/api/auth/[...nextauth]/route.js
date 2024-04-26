@@ -47,6 +47,18 @@ const handler = NextAuth({
     })
   ],
   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    async session(session, user) {
+      session.user.id = user.id;
+      return session;
+    },
+    async jwt(token, user, account, profile, isNewUser) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    }
+  }
 })
 
 export {handler as GET, handler as POST}
