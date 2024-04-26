@@ -52,7 +52,7 @@ const handler = NextAuth({
       session.user.id = user.id;
       return session;
     },
-    async jwt(token, user, account, profile, isNewUser) {
+    async jwt(token, user, account) {
       if (user) {
         token.id = user.id;
       }
