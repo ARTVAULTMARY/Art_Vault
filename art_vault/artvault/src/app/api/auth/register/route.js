@@ -42,10 +42,10 @@ export async function POST(request){
               title: "Default Gallery",
             },
         })
-
+        return NextResponse.json({ message: 'signup success' })
+        
     } catch (e) {
-        console.log({ e })
+        // console.log({ e })
+        return NextResponse.json({ message: `${e}` }, { status: 400 });
     }
-
-    return NextResponse.json({ message: 'signup success' })
 }
