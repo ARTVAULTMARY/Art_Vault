@@ -19,9 +19,11 @@ model User {
 }
 
 model Gallery {
-  id            String   @default(cuid())
-  name          String   @unique
-  title         String   @unique
-  user_id       String   @unique
+  id            String     @id @default(cuid())
+  name          String   
+  title         String   
+  user_id       String   
   images        String[] 
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
 }
