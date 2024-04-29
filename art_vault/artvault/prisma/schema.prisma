@@ -5,25 +5,41 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model User {
-  id            String   @default(cuid())
-  email         String   @unique
-  username      String   @unique
-  password      String
-  @@map(name: "users")
+  id        String    @id @unique @default(cuid())
+  email     String    @unique
+  username  String    @unique
+  password  String
+  galleries Gallery[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 model Gallery {
-  id            String     @id @default(cuid())
-  name          String   
-  title         String   
-  user_id       String   
-  images        String[] 
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
+  id          String   @id @unique @default(cuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  title       String
+  description String
+  images      Image[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Image {
+  id          String   @id @unique @default(cuid())
+  gallery     Gallery  @relation(fields: [galleryId], references: [id])
+  galleryId   String
+  title       String
+  description String
+  imageURL    String
+  downloadURL String
+  public      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
