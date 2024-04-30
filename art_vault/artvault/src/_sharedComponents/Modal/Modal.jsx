@@ -24,7 +24,7 @@ export default function Modal() {
         if (e.target === overlay.current) {
             if (dismissModal) dismissModal();
         }
-    }, [dismissModal, overlay, wrapper]);
+    }, [dismissModal, overlay]);
 
     const onKeyPress = useCallback((e) => {
         if (e.key === "Escape") dismissModal();
