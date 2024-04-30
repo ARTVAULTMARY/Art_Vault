@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
 import DashboardButton from './DashboardButton';
+import { authOptions } from '@/app/api/auth/[...nextauth]/options';
 
 export default async function Header() {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
+    console.log("logging session: ", session)
 
     return (
         <div className="flex flex-col items-center min-h-[300px] w-full min-w-[1200px]">

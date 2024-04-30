@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
-    "name" TEXT,
+    "username" TEXT,
     "image" TEXT,
     "email" TEXT NOT NULL,
     "emailVerified" TIMESTAMP(3),
@@ -46,6 +46,19 @@ CREATE TABLE "VerificationToken" (
     "identifier" TEXT NOT NULL,
     "token" TEXT NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Gallery" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "user_id" TEXT NOT NULL,
+    "images" TEXT[],
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Gallery_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

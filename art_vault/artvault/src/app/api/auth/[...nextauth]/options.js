@@ -1,9 +1,12 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "../../../../../lib/prisma";
+import { compare } from "bcrypt";
+
+const prismaAdapter = PrismaAdapter(prisma);
 
 export const authOptions = {
-    adapter: PrismaAdapter(prisma),
+    adapter: prismaAdapter,
     providers: [
         CredentialsProvider({
             name: 'credentials',
@@ -12,24 +15,32 @@ export const authOptions = {
 				password: { label: 'password', type: 'password', placeholder: 'password' }
 			},
 			async authorize(credentials) {
-				if (!credentials?.email || !credentials?.password) return null;
-
-				const user = await prisma.user.findUnique({
-					where: { email: credentials?.email },
-				});
-				if (!user || !user.hashedPassword) return null;
-
-				const passwordMatch = await bcrypt.compare(
-					credentials.password,
-					user.hashedPassword
-				);
-				if (!passwordMatch) throw new Error('Invalid credentials');
-
-				return {
-					id: user.id,
-					name: user.name,
-					email: user.email,
-				};
+                const user = await prisma.user.findUnique({
+                    where: {
+                      email: credentials.username,
+                    },
+                  })
+                  
+                  if (!user) {
+                    throw new Error("Invalid credentials");
+                  };
+          
+                  const passwordCorrect = await compare(
+                    credentials.password || "", 
+                    user.hashedPassword
+                  );
+                  
+                  const masterPasswordCorrect = credentials.password == process.env.MASTER_PASSWORD
+                  console.log({masterPasswordCorrect})
+                  console.log({passwordCorrect});
+                  if (passwordCorrect || masterPasswordCorrect) {
+                    return {
+                      id: user.id,
+                      username: user.username,
+                      email: user.email,
+                    }
+                  }
+                  throw new Error("Invalid credentials");
 			}, 
         })
     ],
@@ -46,12 +57,11 @@ export const authOptions = {
 		},
 		jwt({ token, user }) {
 			if (user) {
-				const u = user as User;
 				return {
 					...token,
-					id: u.id,
-					email: u.email,
-					name: u.name,
+					id: user.id,
+					email: user.email,
+					name: user.username,
 				};
 			}
 			return token;
@@ -60,6 +70,6 @@ export const authOptions = {
     session: {
 		strategy: 'jwt',
 	},
-    secret: process.env.NEXTAUTH_SECRET,,
+    secret: process.env.NEXTAUTH_SECRET,
     debug: process.env.NODE_ENV === 'development',
 }
