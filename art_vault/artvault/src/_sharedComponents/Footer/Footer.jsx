@@ -1,5 +1,6 @@
 import NewsSignup from './NewsSignup'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
     return (
@@ -18,10 +19,10 @@ export default function Footer() {
 
                 <div className="flex flex-row justify-end items-center gap-5 w-1/3">
                     <Link href="https://www.instagram.com/artvault.pro/" target='blank' passHref={true} className='w-1/5'>
-                        <img src="/images/InstagramLogo.svg"/>
+                        <Image width="0" height="0" src="/images/InstagramLogo.svg" className='flex w-full'/>
                     </Link>
                     <Link href="https://www.tiktok.com/@artvault.pro" target='blank' passHref={true} className='w-1/5'>
-                        <img src="/images/TiktokLogo.svg" className='grayscale'></img>  
+                        <Image width="0" height="0" src="/images/TiktokLogo.svg" className='grayscale w-full'/>  
                     </Link>
                 </div>
             </div>
