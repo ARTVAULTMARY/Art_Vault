@@ -1,15 +1,18 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
 import DashboardButton from './DashboardButton';
+import Image from 'next/image';
 
 export default async function Header() {
     const session = await getServerSession();
 
     return (
         <div className="flex flex-col items-center min-h-[300px] w-full min-w-[1200px]">
-            <img
+            <Image
+                width="187"
+                height="187"
                 src="/images/ArtVault.svg"
-                className="absolute h-1/4 max-h-[187px] min-h-[187px] scale-115 mt-2"
+                className="absolute scale-115 mt-2"
             />
             <div className="flex flex-row justify-start items-center w-full h-1/3 bg-alto">
                 { !session ? <Link
