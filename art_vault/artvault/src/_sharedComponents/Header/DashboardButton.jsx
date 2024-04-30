@@ -11,7 +11,7 @@ export default function DashboardButton(){
     useEffect(() => {
         if (pathName === '/dashboard') setDashSelected(true);
         else setDashSelected(false);
-    }, [dashSelected])
+    }, [dashSelected, pathName])
 
     const handleRedirect = () => {
         if (dashSelected) router.push('/')

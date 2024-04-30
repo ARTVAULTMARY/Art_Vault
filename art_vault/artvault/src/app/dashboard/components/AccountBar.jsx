@@ -1,9 +1,12 @@
 import Logout from "@/_sharedComponents/Header/Logout";
+import Image from "next/image";
 
 export default function AccountBar(session) {
     return (
         <div className="flex flex-col items-center w-1/5">
-            <img
+            <Image
+                height="0"
+                width="0"
                 src="/images/ArtVault.svg"
                 className="w-full"
             />

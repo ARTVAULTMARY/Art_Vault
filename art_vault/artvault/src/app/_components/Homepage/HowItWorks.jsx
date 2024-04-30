@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function HowItWorks() {
     return (
         <div className="flex flex-col items-center w-full">
@@ -9,7 +11,7 @@ export default function HowItWorks() {
                     <h2 className="text-white text-5xl font-bold">1</h2> 
                     <div className="flex flex-col bg-white aspect-square p-6 rounded-md">
                         <h2 className="font-league-gothic h-1/2 text-superxl text-center">CREATE YOUR ACCOUNT</h2>
-                        <img src="/images/PaintIcon.svg" className="h-1/2 fill-teak"></img>
+                        <Image width="0" height="0" src="/images/PaintIcon.svg" className="h-1/2 w-full fill-teak"/>
                     </div>
                 </div>
 
@@ -17,7 +19,7 @@ export default function HowItWorks() {
                     <h2 className="text-white text-5xl font-bold">2</h2> 
                     <div className="flex flex-col bg-white aspect-square p-6 rounded-md">
                         <h2 className="font-league-gothic h-1/2 text-superxl text-center">SET UP YOUR GALLERY</h2>
-                        <img src="/images/HangingFrame.svg" className="h-1/2 fill-teak"></img>
+                        <Image width="0" height="0" src="/images/HangingFrame.svg" className="h-1/2 w-full fill-teak"/>
                     </div>
                 </div>
 
@@ -25,7 +27,7 @@ export default function HowItWorks() {
                     <h2 className="text-white text-5xl font-bold">3</h2> 
                     <div className="flex flex-col bg-white aspect-square p-6 rounded-md">
                         <h2 className="font-league-gothic h-1/2 text-superxl text-center">SAVE YOUR ARTWORK</h2>
-                        <img src="/images/UploadIcon.svg" className="h-1/2 fill-teak"></img>
+                        <Image width="0" height="0" src="/images/UploadIcon.svg" className="h-1/2 w-full fill-teak"/>
                     </div>
                 </div>
 
