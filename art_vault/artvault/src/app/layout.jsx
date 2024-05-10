@@ -1,5 +1,5 @@
 import './globals.css'
-import { ReduxProvider } from './_redux/provider'
+import { ReduxProvider } from './_features/provider'
 import { league_gothic, open_sans } from '@/_sharedComponents/Font/Font'
 import Modal from '@/_sharedComponents/Modal/Modal'
 import Script from 'next/script'
