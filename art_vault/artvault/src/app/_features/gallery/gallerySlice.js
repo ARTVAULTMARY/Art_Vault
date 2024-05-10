@@ -1,101 +1,43 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
+import { getAllUserGalleries } from "./projectThunks";
 
-const initialState = { user: null }
+const initialState = {
+    allProjects: {},
+    currentProject: undefined,
+    error: null,
+};
 
-const sessionSlice = createSlice({
-    name: 'session',
+const project = createSlice({
+    name: "gallery",
     initialState,
     reducers: {
-        setUser(state, action) {
-            return { user: action.payload }
+        setAllGalleries: (state, action) => {
+            state.allGalleries = action.payload;
         },
-        removeUser() {
-            return initialState
+        clearAllGalleries: (state) => {
+            state.allGalleries = {};
         },
+        setCurrentGallery: (state, action) => {
+            state.currentGallery = action.payload;
+        },
+        clearCurrentGallery: (state) => {
+            state.currentGallery = undefined;
+        }
     },
-})
-
-//-----Thunks-----//
-export const signUp = (username, email, password) => async (dispatch) => {
-    const response = await fetch('', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            username,
-            email,
-            password,
-        }),
-    })
-
-    if (response.ok) {
-        const data = await response.json()
-        dispatch(setUser(data))
-        return null
-    } else if (response.status < 500) {
-        const data = await response.json()
-        if (data.errors) {
-            return data.errors
-        }
-    } else {
-        return ['An error occurred. Please try again.']
+    extraReducers: (builder) => {
+        builder.addCase(getAllUserGalleries.fulfilled, (state, action) => {
+            const normalizedGalleries = action.payload.reduce((acc, project) => {
+                acc[gallery.id] = project;
+                return acc;
+            }, {});
+            state.allGalleries = normalizedGalleries;
+        })
+        .addCase(getAllUserGalleries.rejected, (state, action) => {
+            state.error = action.error.message ? action.error.message : 'Failed to fetch Galleries';
+        });
     }
-}
+});
 
-export const logIn = (email, password) => async (dispatch) => {
-    const response = await fetch('', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            email,
-            password,
-        }),
-    })
+const { setAllGalleries, setCurrentGallery, clearAllGalleries, clearCurrentGallery } = project.actions;
 
-    if (response.ok) {
-        const data = await response.json()
-        dispatch(setUser(data))
-        return null
-    } else if (response.status < 500) {
-        const data = await response.json()
-        if (data.errors) {
-            return data.errors
-        }
-    } else {
-        return ['An error occurred. Please try again.']
-    }
-}
-
-export const logOut = () => async (dispatch) => {
-    const response = await fetch('', {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-
-    if (response.ok) {
-        dispatch(removeUser())
-    }
-}
-
-export const authenticate = () => async (dispatch) => {
-    const response = await fetch('', {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    if (response.ok) {
-        const data = await response.json()
-        if (data.errors) {
-            return
-        }
-
-        dispatch(setUser(data))
-    }
-}
-
-export const { setUser, removeUser } = sessionSlice.actions
-export default sessionSlice.reducer
+export { galleries, setAllGalleries, setCurrentGalleries, clearAllGalleries, clearCurrentGalleries };
